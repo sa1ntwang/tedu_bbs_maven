@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0038)http://www.miaodiyun.com/register.html -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -8,19 +7,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>注册-TEDU_BBS</title>
 <link rel="stylesheet" href="./css/bootstrap.css" />
-<!-- <link rel="stylesheet" href="./css/hk_css1.css" /> -->
 
 <link rel="stylesheet" href="./css/hk_font-awesome.min.css" />
 <link rel="stylesheet" href="./css/hk_md.login.css" />
 
-<link rel="stylesheet" href="./css/hk_layer.css"
-	id="layui_layer_skinlayercss" style="" />
+	<script type="text/javascript" charset="UTF-8"
+		src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" charset="UTF-8"
+		src="./js/bootstrap.min.js"></script>
 </head>
 <body>
 	<header id="header">
 		<div class="inner clearfix row">
 			<div class="pull-left col-md-3">
-				<a href="" class="logo"><img src="./imgs/logo.jpg" alt=""></a>
+				<a href="homepage" class="logo"><img src="./imgs/logo.jpg" alt=""></a>
 			</div>
 			<div class="pull-left col-md-5">
 				<span class="logo-text text-center center-block">用户注册</span>
@@ -47,71 +47,47 @@
 		<div class="inner clearfix">
 			<div class="register-form">
 				<div class="form-bd">
-					<form action="/***************************************"
+					<form action="#"
 						method="post" id="myform" name="regform" class="form-horizontal">
 
 						<div class="form-title col-xs-12">
 							账户设置 
 						</div>
 						<div class="form-group clearfix">
-							<label class="col-xs-3 control-label" for="username">用户名</label>
+							<label class="col-xs-3 control-label" for="uName">用户名</label>
 							<div class="col-xs-9 control-col">
-								<input type="text" class="form-control" placeholder="请输入用户名"
-									id="user_name" name="username" maxlength="30" datatype="e"
-									nullmsg="请输入您的用户名" errormsg="请输入正确的用户名" />
-								<label for="user_name" class="label" style="color:red">fdsafdsa</label>
+								<input type="text" class="form-control input-check" placeholder="请输入用户名" id="uName" />
+								<label id="uNameLable" class="label" style="color:red"></label>
 							</div>
 						</div>
 						<div class="form-group clearfix">
 							<label class="col-xs-3 control-label" for="uMobile">手机号码</label>
 							<div class="col-xs-9 control-col">
-								<input type="text" class="form-control" placeholder="请输入手机号码"
-									id="uMobile" name="developer.phone" maxlength="11" datatype="m"
-									nullmsg="请输入您的手机号码" errormsg="请输入正确的手机号码" />
-								<!-- ajaxurl="/reg/check-phone"> -->
+								<input type="number" oninput="if(value.length>11)value=value.slice(0,11)" class="form-control input-check" placeholder="请输入手机号码" id="uMobile" />
+								<label id="uMobileLable" class="label" style="color:red"></label>
 							</div>
 						</div>
-						
-						<!--<div class="form-group form-captcha clearfix">-->
-						<!--<label class="col-xs-3 control-label" for="imgCode">图片验证码</label>-->
-						<!--<div class="col-xs-9 control-col">-->
-						<!--<input type="text" class="form-control" id="imgCode" name="developer.imgCode" placeholder="请输入图片验证码" maxlength="4" datatype="*4-4" nullmsg="请输入您的图片验证码" errormsg="请输入正确的图片验证码" autocomplete="off" />-->
-						<!--</div>-->
-						<!--<a href="javascript:void(0);" onclick="_codeChange()" class="captcha-img">-->
-						<!--<img class="verify-code codeBtn"  alt=""/>-->
-						<!--&lt;!&ndash; <img class="verify-code codeBtn" th:src="@{/code}" alt=""/> &ndash;&gt;-->
-						<!--</a>-->
-						<!--</div>-->
 						<div class="form-group clearfix">
-							<div class="col-xs-9 col-xs-offset-3 control-col code-mode"
-								data-email="#uEmail" data-mobile="#uMobile"
-								data-imgcode="#imgCode">
+							<div class="col-xs-9 col-xs-offset-3 control-col code-mode">
 								<button class="btn btn-primary " type="button"
 									style="width: 48%; margin-right: 2%; margin-top: 0;"
-									data-type="sms" onclick="codeVerification(this)"
+									onclick="codeVerification(this)"
 									disabled="true">获取短信验证码</button>
 							</div>
 						</div>
 						<div class="form-group clearfix">
-							<!--用于解决360极速浏览器的兼容模式下的自动填充-->
-							<input type="text" disabled="disabled" id="code" name="code"
-								style="display: none;"> 
-							<input type="password" disabled="disabled" id="password" style="display: none;">
-							<!--用于解决360极速浏览器的兼容模式下的自动填充-->
 							<label class="col-xs-3 control-label" for="verCode">手机验证码</label>
 							<div class="col-xs-9 control-col">
-								<input type="text" class="form-control" placeholder="请输入手机验证码"
-									maxlength="6" name="verCode" id="verCode" datatype="n6-6"
-									nullmsg="请输入您的手机验证码" errormsg="请输入6位手机验证码" autocomplete="off">
+								<input type="number" oninput="if(value.length>11)value=value.slice(0,11)" class="form-control input-check" placeholder="请输入手机验证码" id="verCode" autocomplete="off">
+								<label id="verCodeLable" class="label" style="color:red"></label>
 							</div>
 						</div>
 						<div class="form-group clearfix">
 							<label class="col-xs-3 control-label" for="password">密码</label>
 							<div class="col-xs-9 control-col">
-								<input type="password" class="form-control"
-									placeholder="请设置您的密码" maxlength="16" id="password"
-									name="user.password" datatype="*6-18" nullmsg="请输入您的密码"
-									errormsg="请输入正确的密码" autocomplete="off">
+								<input type="password" class="form-control input-check"
+									placeholder="请设置您的密码" id="password" autocomplete="off">
+								<label id="passwordLable" class="label" style="color:red"></label>
 								<div class="slogon" style="margin-top: 5px;">6-16个字母、数字或者英文符号，区分大小写</div>
 							</div>
 						</div>
@@ -121,10 +97,7 @@
 								<button class="btn btn-primary btn-lg btn-login" type="button"
 									name="bnt" id="get-form">确定注册</button>
 							</div>
-							<div class="validform-box Validform_checktip Validform_wrong"
-								style="display: none">
-								<i class="msg-icon"></i><label for="" class="label"></label>
-							</div>
+							
 							<div class="control-col col-xs-12">
 								<a class="btn btn-default btn-lg btn-login" href="">已有帐号，立即登录</a>
 							</div>
@@ -137,18 +110,49 @@
 	<footer id="footer">
 		<div class="copyright">tedu_bbs开发所有</div>
 	</footer>
-
-	<script type="text/javascript" charset="UTF-8"
-		src="./js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" charset="UTF-8"
-		src="./js/bootstrap.min.js"></script>
-	<script type="text/javascript" charset="UTF-8">
-		window.onload()
+	<script type="text/javascript">
+		var b1=b2=b3=b4=false;
+		console.log(b1);
+		$(function(){
+			$(".input-check").on("focus",clearLable);	
+			$(".input-check").on("blur",checkThis);	
+		});
+		function clearLable(){
+			$(this).next().empty();
+		}
+		function checkThis(){
+		    var lName = $('label[for="'+ this.id +'"]').text();
+			var msgLable = $(this).next();
+			var currentText = $(this).val();
+		    var msg="";
+			var regx="";
+			if(currentText.length==0){
+				msg=lName+"不能为空";
+				msgLable.text(msg);
+			}else{
+				debugger				
+				switch (lName) {
+                case ("用户名"):
+                	regx=/^[a-zA-Z\u4e00-\u9fa5]{1}[a-zA-Z0-9_\u4e00-\u9fa5]{2,19}$/;
+					if(!regx.test(currentText))
+						msg="用户名:3-20长度的汉字字母数字以及下划线";
+                    break;
+                case ("手机号码"):
+                	regx=/^1(3|4|5|7|8)\d{9}$/;
+					if(!regx.test(currentText))
+						msg="请输入正确的手机号!";
+                    break;
+                case ("密码"):
+                	regx="";
+					if(!regx.test(currentText))
+						msg="密码未通过检测,请换一个!";
+                    break;
+           		}
+			}
+			msgLable.text(msg);  
+		}
+		
 	</script>
-	<script type="text/javascript" charset="UTF-8"
-		src="./js/hk_verify.js"></script>
-	<!-- <script type="text/javascript" charset="UTF-8" src="./js/npm.js"></script> -->
-	
 
 </body>
 </html>

@@ -13,7 +13,7 @@ var currentCount = countNum = 120;
 var settime = function(o,c) {
     var $obj     = $(o),
         $phone   = $($obj.parents('.code-mode').data('mobile')),   //手机号码
-        $email   = $($obj.parents('.code-mode').data('email')),    //邮箱地址
+        $nAme   = $($obj.parents('.code-mode').data('nAme')),    //邮箱地址
         // $imgCode   = $($obj.parents('.code-mode').data('imgcode')),    //邮箱地址
         codeType = ( $obj.data("type") == "sms" ),
         timecount;                      //定时器定义
@@ -30,7 +30,7 @@ var settime = function(o,c) {
             $obj.text("获取验证码").parent().children().removeAttr("disabled").removeClass('disabled');
             $phone.removeAttr("readonly");
             // $imgCode.removeAttr("readonly");
-            $email.removeAttr("readonly");
+            $nAme.removeAttr("readonly");
             $obj.text("获取短信验证码");
             clearTimeout(timecount);
             currentCount = countNum; 
@@ -50,7 +50,7 @@ var settime = function(o,c) {
                         'code'  : $imgCode.val(),
                         't'     : Number(!codeType).toString(),
                         'phone' : $phone.val(),
-                        'email' : $email.val(),
+                        'nAme' : $nAme.val(),
                         'newType': $("#newType").val(),
                         "NECaptchaValidate" : $("*[name='NECaptchaValidate']").val()
                         // 'verifycode':c
@@ -68,7 +68,7 @@ var settime = function(o,c) {
                     layer.msg('发送成功');
                     $phone.attr("readonly", true);
                     $imgCode.attr("readonly", true);
-                    $email.attr("readonly", true);
+                    $nAme.attr("readonly", true);
                     _onTrigger(true);
                     $(".btn-primary").removeAttr('disabled',false).removeClass('disabled');
                 },
@@ -256,9 +256,9 @@ $.fn.initValidform = function (action) {
     //验证触发事件
     var validMethod=function(o){
         var $mobile  = $("#uMobile"),
-            $email   = $("#uEmail");
+            $nAme   = $("#uName");
             $imgCode = $("#imgCode");
-        if(!(o.obj.attr('id')==$email.attr('id')||o.obj.attr('id')==$mobile.attr('id') ||o.obj.attr('id')==$imgCode.attr('id') )){
+        if(!(o.obj.attr('id')==$nAme.attr('id')||o.obj.attr('id')==$mobile.attr('id') ||o.obj.attr('id')==$imgCode.attr('id') )){
             //console.log('不执行下面操作');
             return;
         }
@@ -277,17 +277,17 @@ $.fn.initValidform = function (action) {
                 }
             break;
             case "regPage":
-                //if(o.obj[0].id=="uEmail")
+                //if(o.obj[0].id=="uName")
                 if(o.type==2){
-                    //if (validCheck($mobile,true)&&validCheck($email,true)&&validCheck($imgCode,true)) {
-                    if(true&&validCheck($mobile,true)&&validCheck($email,true)&&validCheck($imgCode,true)) {
+                    //if (validCheck($mobile,true)&&validCheck($nAme,true)&&validCheck($imgCode,true)) {
+                    if(true&&validCheck($mobile,true)&&validCheck($nAme,true)&&validCheck($imgCode,true)) {
                         console.log('移除disabled');
                         $(".code-mode").children().removeAttr("disabled").removeClass("disabled");
                     }
                 }
                 else{
-                    //if (validCheck($mobile,false)||validCheck($email,false)||validCheck($imgCode,false)) {
-                    if (true||!validCheck($email)||!validCheck($mobile)) {
+                    //if (validCheck($mobile,false)||validCheck($nAme,false)||validCheck($imgCode,false)) {
+                    if (true||!validCheck($nAme)||!validCheck($mobile)) {
                         console.log('添加disabled');
                         // $(".code-mode").children().attr("disabled",true).addClass("disabled");
                     }
@@ -335,11 +335,11 @@ var handlerEmbed = function (captchaObj) {
 
 var codeVerification = function($this){
     var $mobile  = $("#uMobile"),
-        $email   = $("#uEmail");
-        $email.trigger('blur');
+        $nAme   = $("#uName");
+        $nAme.trigger('blur');
         $mobile.trigger('blur');
         _this = $this;
-        if($email.siblings('span').hasClass('fa-remove')){
+        if($nAme.siblings('span').hasClass('fa-remove')){
             return !1;
         }
         if($mobile.siblings('span').hasClass('fa-remove')){

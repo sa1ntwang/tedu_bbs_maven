@@ -57,40 +57,25 @@
 				<div class="form-bd">
 					<form action="/vaaaaaaaaaaaaerifyCode" method="post" id="myform"
 						name="regform" class="form-horizontal">
-						<input type="hidden" name="developer.channelName" id="aaa"
-							value="${type!&#39;&#39;}"> <input type="hidden"
-							name="developer.qmymark" id="qmymark" value=""> <input
-							type="hidden" id="newType" name="newType" value="register">
-						<input type="hidden" name="hidUA" value="computer">
-						<!-- <input type="hidden" name="developer.channelName" id="aaa" value="${type!''}">
-                    <input type="hidden" name="developer.qmymark" id="qmymark" value="">
-                    <input type="hidden" name="hidUA" id="hidUA" value="computer">
-                    <input type="hidden" name="developer.company" id="company" value=" "> -->
-						<input type="hidden" name="developer.contact" id="contact"
-							value=" "> <input type="hidden" name="developer.company"
-							id="company" value=" "> <input type="hidden"
-							name="developer.loginId" id="loginId" value=""> <input
-							type="hidden" name="developer.timestamp" id="timestamp"
-							value="1555208184455">
-
+						
 						<div class="form-title col-xs-12">
-							账户设置 <small> - 手机号、邮箱皆可作为您的登录帐号使用</small>
+							账户设置 <small> - 手机号作为您的登录帐号使用</small>
 						</div>
 						<div class="form-group clearfix">
-							<label class="col-xs-3 control-label" for="uEmail">邮箱地址</label>
+							<label class="col-xs-3 control-label" for="uName">用户名</label>
 							<div class="col-xs-9 control-col">
-								<input type="text" class="form-control" placeholder="请输入邮箱地址"
-									id="uEmail" name="developer.email" maxlength="30" datatype="e"
-									nullmsg="请输入您的邮箱地址" errormsg="请输入正确的邮箱地址" />
+								<input type="text" class="form-control" placeholder="请输入用户名" id="uName"/>
 								<!-- ajaxurl="/reg/check-email" -->
+								<div>
+									<p id="uNameDiv" style="color:red;font-weight:bold">123</p>
+								</div>
 							</div>
 						</div>
 						<div class="form-group clearfix">
 							<label class="col-xs-3 control-label" for="uMobile">手机号码</label>
 							<div class="col-xs-9 control-col">
 								<input type="text" class="form-control" placeholder="请输入手机号码"
-									id="uMobile" name="developer.phone" maxlength="11" datatype="m"
-									nullmsg="请输入您的手机号码" errormsg="请输入正确的手机号码" />
+									id="uMobile" ></input>
 								<!-- ajaxurl="/reg/check-phone"> -->
 							</div>
 						</div>
@@ -145,16 +130,7 @@
 								</div>
 							</div>
 						</div>
-						<!--<div class="form-group form-captcha clearfix">-->
-						<!--<label class="col-xs-3 control-label" for="imgCode">图片验证码</label>-->
-						<!--<div class="col-xs-9 control-col">-->
-						<!--<input type="text" class="form-control" id="imgCode" name="developer.imgCode" placeholder="请输入图片验证码" maxlength="4" datatype="*4-4" nullmsg="请输入您的图片验证码" errormsg="请输入正确的图片验证码" autocomplete="off" />-->
-						<!--</div>-->
-						<!--<a href="javascript:void(0);" onclick="_codeChange()" class="captcha-img">-->
-						<!--<img class="verify-code codeBtn"  alt=""/>-->
-						<!--&lt;!&ndash; <img class="verify-code codeBtn" th:src="@{/code}" alt=""/> &ndash;&gt;-->
-						<!--</a>-->
-						<!--</div>-->
+						
 						<div class="form-group clearfix">
 							<div class="col-xs-9 col-xs-offset-3 control-col code-mode"
 								data-email="#uEmail" data-mobile="#uMobile"
@@ -163,14 +139,7 @@
 									style="width: 48%; margin-right: 2%; margin-top: 0;"
 									data-type="sms" onclick="codeVerification(this)"
 									disabled="true">获取短信验证码</button>
-								<!-- <button class="btn btn-primary " type="button"
-																	style="width: 48%; margin-left: 2%; margin-top: 0;"
-																	data-type="voice" onclick="codeVerification(this)"
-																	disabled="true">获取语音验证码</button> -->
-								<!-- <div class="btn-group" style="width:100%;">
-                                <button class="btn btn-primary disabled" type="button" style="width:50%;" data-type="sms" onclick="settime(this)" disabled="true" >获取短信验证码</button>
-                                <button class="btn btn-primary disabled" type="button" style="width:50%;" data-type="voice" onclick="settime(this)" disabled="true" >获取语音验证码</button>
-                            </div> -->
+								
 							</div>
 						</div>
 						<div class="form-group clearfix">
@@ -236,8 +205,7 @@
 	</div>
 
 	<script charset="utf-8" src="./js/hk_v.js"></script>
-	<!-- <script type="text/javascript" charset="UTF-8" async=""
-	src="./js/hk_plugins.min.js"></script> -->
+	
 	<script type="text/javascript" charset="UTF-8" async=""
 		src="./files/core.php"></script>
 	<script type="text/javascript" charset="UTF-8" async=""
@@ -248,10 +216,63 @@
 	<script type="text/javascript" src="./js/hk_Validform_v5.3.2_min.js"></script>
 	<script type="text/javascript" src="./js/hk_layer.js"></script>
 	<script type="text/javascript" src="./js/hk_md.login.js"></script>
-	<!-- <script src="http://static.geetest.com/static/tools/gt.js"></script> -->
 	<script type="text/javascript" src="./js/hk_jquery.cookie.js"></script>
 	<script src="./js/hk_load.min.js"></script>
 	<script type="text/javascript">
+	var isSubmit = false;
+	$(function() {
+		
+		$('#uMobile').bind('input propertychange', function() {
+			if ($(this).val().length == 11) {
+				$(this).blur().focus();
+			}
+		});
+
+		$('#imgCode').bind('input propertychange', function() {
+			if ($(this).val().length == 4) {
+				$(this).blur().focus();
+			}
+		});
+		$("#term").load("./term.html  .about-box");
+
+		$('.captcha-img').hover(function() {
+			layer.tips('如无显示验证码图片,点此刷新', '.captcha-img', {
+				tips : [ 1, '#000000' ]
+			});
+		}, function() {
+			return;
+		});
+		
+		var nullmsg="请输入您的邮箱地址";
+		var errormsg="请输入正确的邮箱地址" ;
+		var username=$("#uName").val();
+			console.log("username:"+username);
+			console.log("$('#uName').html():"+$('#uName').html());
+		var regx="/^[a-zA-Z\u4e00-\u9fa5]{1}[a-zA-Z0-9_\u4e00-\u9fa5]{2,19}$/";
+		
+		$("#uName").on("focus",function(){
+			$("#uNameDiv").empty();
+		});
+		$("#uName").blur(function(){
+			console.log("失去焦点");
+			if(username==null||username==""){
+				$("#uNameDiv").val(nullmsg);
+			}else if(!username.test(regx)){
+				$("#uNameDiv").val(errormsg);
+			}else{
+				$("#uNameDiv").val("");
+			}
+			
+		})
+	});
+	function checkUName(){
+	}
+	
+	
+	
+	
+	
+	
 		(function() {
 			(function() {
 				var loginId = window.location.href;
@@ -276,11 +297,7 @@
 			}
 			$("#myform").submit();
 		});
-		//没有营销渠道才设置销售经理渠道，并写入cookie。用户跳转到其他页面再回来，则cookie里有值了。
-		//if($("#qmymark").val()==null || $("#qmymark").val()==""){
-		//  $("#qmymark").val(GetQueryString('clientManagerId'));
-		//  $.cookie('qmymark', GetQueryString('clientManagerId'));
-		//}
+		
 		initNECaptcha({
 			captchaId : '3aa8d8bffbd249df9e411c9681461d44',
 			element : '#captcha_div',
@@ -296,78 +313,20 @@
 		}, function(err) {
 			// 初始化失败后触发该函数，err对象描述当前错误信息
 		});
-		//为避免商机冲突，销售推广会覆盖百度等。
-		var xiaoshou = GetQueryString('clientManagerId');
-		if (xiaoshou != null) {
-			$("#qmymark").val(xiaoshou);
-			$.cookie('qmymark', xiaoshou);
-		}
-		console.log($("#qmymark").val());
-		//<![CDATA[
-		function GetQueryString(name) {
-			console.log("a");
-			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-			var r = window.location.search.substr(1).match(reg);
-			console.log(r);
-			if (r != null)
-				return unescape(r[2]);
-			return null;
-		}//]]>
-		var isSubmit = false;
-		$(function() {
-			//     if(!isSubmit){
-			//         if($("form").Validform({tiptype:2}).check(true)){
-			//             var email = $('#uEmail').val();
-			//             var code = $("input.form-control[name='code']").val();
-			//             $.post("/tedu_bbs_maven/VerifyCode", {
-			//                 code: code,
-			//                 email: email,
-			//             }, function(data) {
-			//                 if (data.code == "0") { //成功
-			//                     isSubmit = true;
-			//                     $(".btn-reg").attr("disabled","disabled");
-			//                     $('form').submit();
-			//                 } else {
-			//                     e.preventDefault();
-			//                     layer.msg("请填写正确的短信验证码");
-			//                     isSubmit = false;
-			//                     $(".btn-reg").removeAttr("disabled");
-			//                 }
-			//             });
-			//         }
-			//     }
-			//     return isSubmit;
-			// });
-
-			$('#uMobile').bind('input propertychange', function() {
-				if ($(this).val().length == 11) {
-					$(this).blur().focus();
-				}
-			});
-
-			$('#imgCode').bind('input propertychange', function() {
-				if ($(this).val().length == 4) {
-					$(this).blur().focus();
-				}
-			});
-			$("#term").load("./term.html  .about-box");
-
-			$('.captcha-img').hover(function() {
-				layer.tips('如无显示验证码图片,点此刷新', '.captcha-img', {
-					tips : [ 1, '#000000' ]
-				});
-			}, function() {
-				return;
-			})
-		});
-
+		
+			
+			
+		
+		
+		
+		
 		function checkForm() {
-			var email = $('#uEmail').val();
+			var username = $('#uName').val();
 			var code = $("input.input[name='code']").val();
 			/* ================================================================================================================================================================================== */
-			$.post("tedu_bbs_maven/VerifyCode", {
-				code : code,
-				email : email
+			$.post("tedu_bbs_maven/checkForm", {
+				"code" : code,
+				"username" : username
 			}, function(data) {
 				if (data.code == "0") { //成功
 					return true;
