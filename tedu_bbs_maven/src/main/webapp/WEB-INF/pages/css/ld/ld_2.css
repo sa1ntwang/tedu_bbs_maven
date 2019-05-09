@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+/***** 图片引用区域 *****/
+.logoNews { background:url(./imgs/ld/ld_1.jpg) repeat-x;}
+.channelHead { background:url(../../images/news/bgRepNav2015.png) repeat-x;}
+.navNews { background:url(../../images/news/worldMainNav.png) no-repeat bottom center;}
+.worldNews h2 strong { background:url(../../images/news/news2015.png) no-repeat;}
+
+/***** 公共区 *****/
+.worldNews ,.overseas ,.sole ,.aroundWorld { height:320px; overflow:hidden;}
+.worldNews h2 ,.overseas h2 { height:45px;}
+.worldNews h2 strong { background-position:-130px -165px; text-indent:-500px; overflow:hidden; top:10px;}
+.worldNews li a ,.overseas li a { width:321px;}
+
+/***** 精彩专题 *****/
+.excitingTopics { display:block; margin:0 0 35px;}
+.excitingTopics h2 { background:#fff;}
+.excitingTopics .focusBox { display:block; margin:0; padding:0; list-style:none; width:320px;}
+.excitingTopics .focusBox li { display:block; width:300px; height:30px; margin-bottom:5px; list-style:none; background:#fff;}
+.excitingTopics .focusBox li img { display:none; float:left;}
+.excitingTopics .focusBox li em { display:block; line-height:30px; font-family:Verdana; text-align:left; font-size:14px; float:left; color:#000; margin-left:10px; font-style:italic;}
+.excitingTopics .focusBox li h5{ margin:0; padding:0; display:block; width:300px; height:30px; line-height:30px; font-size:12px; color:#666; float:left; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.excitingTopics .focusBox li h5 a{ width:300px; height:30px; line-height:30px; color:#2b2b2b; margin:0 8px; font-size:14px;}
+.excitingTopics .focusBox a:hover { color:#d00005;}
+.excitingTopics .focusBox li.curr { height:200px; position:relative; overflow:hidden;}
+.excitingTopics .focusBox li.curr .img ,.excitingTopics .focusBox li.curr img { display:block; width:300px; height:160px;}
+.excitingTopics .focusBox li.curr em {color:#fff; font-size:24px; margin:0px; line-height:40px; height:40px; margin-left:10px;}
+.excitingTopics .focusBox li.curr h5 a { width:300px; height:40px; line-height:40px; color:#fff; margin:0 8px; font-size:14px; font-family:Microsoft YaHei;}
+.excitingTopics .focusBox li.curr h5 { background:#292929; width:300px; height:40px; line-height:40px; color:#fff; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; /*position:absolute; bottom:0px; left:0px;
+background: rgba(0,0,0,0.6) none repeat scroll 0 0 !important; filter: progid:DXImageTransform.Microsoft.gradient(enabled = 'true', startColorstr = #99000000, endColorstr = #99000000); zoom: 1;*/}

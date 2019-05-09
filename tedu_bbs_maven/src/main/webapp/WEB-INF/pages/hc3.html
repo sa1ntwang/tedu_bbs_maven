@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<!--指定为中文-中国-->
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>个人资料-达内BBS</title>
+		<!--导入bootstrap框架-->
+		<link href="css/bootstrap-theme.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+	</head>
+	<style type="text/css">
+		.div1 {
+			background: #434343;
+		}
+		
+		.img1 {
+			height: 38px;
+		}
+		
+		.div2 {
+			background: #368AD3;
+			height: 68px;
+		}
+		
+		.hc_1 {
+			float: left;
+			margin-top: 10px;
+			height: 48px;
+		}
+		
+		.div3 {
+			margin-top: 25px;
+		}
+		
+		.div4 {
+			margin-top: 140px;
+		}
+		
+		.yejiao {
+			text-align: center;
+			margin-top: 40px;
+		}
+		
+		.div5 {
+			background: #656565;
+			color: #aaa;
+		}
+		
+		.a1 {
+			color: #AAAAAA;
+		}
+		
+		.yejiao1 {
+			text-align: center;
+		}
+		
+		.div6 {
+			margin-top: 40px;
+		}
+	</style>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row div1">
+				<!--点击顶部达内教育图片回到主页-->
+				<div class="col-sm-2"></div>
+				<div class="col-sm-1">
+					<a href=""><img src="imgs/hc_3.jpg" href="#" class="text-center img-rounded img1"></a>
+				</div>
+			</div>
+
+			<div class="row div2">
+				<div class="col-md-2"></div>
+				<div class="col-md-3">
+					<div class="col-md-3">
+						<img src="imgs/hc_1.jpg" alt="..." class="img-circle hc_1">
+					</div>
+					<div class="col-md-9">
+
+						<div class="row">
+							<p></p>
+							<p>网友昵称</p>
+							<p>个性签名</p>
+							<p></p>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-md-5"></div>
+				<div class="col-md-2">
+					<div>
+						<button type="button" class="btn btn-default" style="margin-top: 15px;">退出账号</button>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="list-group col-sm-2 div3">
+					<a href="hc1.html" class="list-group-item ">个人资料</a>
+					<a href="hc2.html" class="list-group-item">修改资料</a>
+					<a href="#" class="list-group-item  active">论坛管理</a>
+					<a href="#" class="list-group-item">返回主页</a>
+				</div>
+				<div class="col-sm-1"></div>
+
+				<div class="col-sm-5">
+
+					<div class="row" style="margin-top:135px ;">
+						<div class="col-sm-3">
+							<p style="margin-top:35px ;">论坛板块1</p>
+						</div>
+						<div class="col-sm-3">
+
+							<div class="dropdown" style="margin-top:30px ;">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                   关注
+                                <span class="caret" ></span>
+                                     </button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">关注</a>
+									</li>
+									<li>
+										<a href="#">取消关注</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6" style="margin-top:25px ;">
+							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                                           申请成为版主
+                            </button>
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">已提交申请,请等待审批!</h4>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-sm-3">
+							<p style="margin-top:35px ;">论坛板块2</p>
+						</div>
+						<div class="col-sm-3">
+
+							<div class="dropdown" style="margin-top:30px ;">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                   关注
+                                <span class="caret" ></span>
+                                     </button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">关注</a>
+									</li>
+									<li>
+										<a href="#">取消关注</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6" style="margin-top:25px ;">
+							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                                           申请成为版主
+                            </button>
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">已提交申请,请等待审批!</h4>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3">
+							<p style="margin-top:35px ;">论坛板块3</p>
+						</div>
+						<div class="col-sm-3">
+
+							<div class="dropdown" style="margin-top:30px ;">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                   关注
+                                <span class="caret" ></span>
+                                     </button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">关注</a>
+									</li>
+									<li>
+										<a href="#">取消关注</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6" style="margin-top:25px ;">
+							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                                           申请成为版主
+                            </button>
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">已提交申请,请等待审批!</h4>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3">
+							<p style="margin-top:35px ;">论坛板块4</p>
+						</div>
+						<div class="col-sm-3">
+
+							<div class="dropdown" style="margin-top:30px ;">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                   关注
+                                <span class="caret" ></span>
+                                     </button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">关注</a>
+									</li>
+									<li>
+										<a href="#">取消关注</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6" style="margin-top:25px ;">
+							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                                           申请成为版主
+                            </button>
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">已提交申请,请等待审批!</h4>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<div class="row div5">
+				<div class="yejiao">
+					<a target="_blank" href=" " class="a1">达内BBS论坛</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href="http://www.tmooc.cn/" class="a1">www.tmooc.cn</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">官方微博</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">诚聘精英</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">广告服务</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">联系方式</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">隐私政策</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">服务条款</a>
+				</div>
+				<div class="yejiao1">
+					<p>达内BBS论坛 版权所有</p>
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+
+</html>

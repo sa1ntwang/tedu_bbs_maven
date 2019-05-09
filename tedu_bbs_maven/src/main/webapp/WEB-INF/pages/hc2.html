@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<!--指定为中文-中国-->
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>个人资料-达内BBS</title>
+		<!--导入bootstrap框架-->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/hc/index.css" rel="stylesheet">
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+	</head>
+	<style type="text/css">
+		.div1 {
+			background: #434343;
+		}
+		
+		.img1 {
+			height: 38px;
+		}
+		
+		.div2 {
+			background: #368AD3;
+			height: 68px;
+		}
+		
+		.hc_1 {
+			float: left;
+			margin-top: 10px;
+			height: 48px;
+		}
+		
+		.div3 {
+			margin-top: 25px;
+		}
+		
+		.div4 {
+			margin-top: 140px;
+		}
+		
+		.yejiao {
+			text-align: center;
+			margin-top: 40px;
+		}
+		
+		.div5 {
+			background: #656565;
+			color: #aaa;
+		}
+		
+		.a1 {
+			color: #AAAAAA;
+		}
+		
+		.yejiao1 {
+			text-align: center;
+		}
+		
+		.div6 {
+			margin-top: 40px;
+		}
+	</style>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row div1">
+				<!--点击顶部达内教育图片回到主页-->
+				<div class="col-sm-2"></div>
+				<div class="col-sm-1">
+					<a href=""><img src="imgs/hc_3.jpg" href="#" class="text-center img-rounded img1"></a>
+				</div>
+			</div>
+
+			<div class="row div2">
+				<div class="col-md-2"></div>
+				<div class="col-md-3">
+					<div class="col-md-3">
+						<img src="imgs/hc_1.jpg" alt="..." class="img-circle hc_1">
+					</div>
+					<div class="col-md-9">
+
+						<div class="row">
+							<p></p>
+							<p>网友昵称</p>
+							<p>个性签名</p>
+							<p></p>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-md-5"></div>
+				<div class="col-md-2">
+					<div>
+						<button type="button" class="btn btn-default" style="margin-top: 15px;">退出账号</button>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="list-group col-sm-2 div3">
+					<a href="hc1.html" class="list-group-item ">个人资料</a>
+					<a href="#" class="list-group-item active">修改资料</a>
+					<a href="hc3.html" class="list-group-item">论坛管理</a>
+					<a href="#" class="list-group-item">返回主页</a>
+				</div>
+				<div class="col-sm-1"></div>
+
+				<div class="col-sm-5 ">
+					<div class="row div4">
+						<h2>基本信息</h2>
+						<form action="#" method="post">
+
+							<table class="table table-striped">
+
+								<tr>
+									<td>昵称:</td>
+									<td>
+										<input type="text" placeholder="张三" name="nickname">
+									</td>
+								</tr>
+								<tr>
+									<td>性别:</td>
+									<td>
+										<input name="gender" type="radio" value="man" />男
+										<input name="gender" type="radio" value="woman" />女
+
+									</td>
+								</tr>
+								<tr>
+									<td>用户名:</td>
+									<td>
+										<input type="text" placeholder="18173111393" name="username">
+									</td>
+								</tr>
+								<tr>
+									<td>密码:</td>
+									<td>
+										<input type="password" name="pwd" />
+									</td>
+								</tr>
+								<tr>
+									<td>达内校区:</td>
+									<td>
+										<input type="text" placeholder="长沙西中心校区" name="school">
+									</td>
+								</tr>
+								<tr>
+									<td>个性签名:</td>
+									<td>
+										<textarea class="form-control" rows="3" placeholder="好好学习天天向上" name="signature"></textarea>
+									</td>
+
+								</tr>
+								<input type="submit" class="btn btn-info" value="确认修改" />
+								<input type="reset" class="btn btn-info" value="重置" style="margin-left: 30px;" />
+							</table>
+						</form>
+					</div>
+					<div class="row div6">
+						<h2>绑定登陆账号</h2>
+						<form action="#" method="post">
+							<table class="table table-striped">
+
+								<tr>
+									<td>手机号:</td>
+									<td>
+										<input type="text" placeholder="18173111393" name="phone-number">
+									</td>
+								</tr>
+								<tr>
+									<td>邮箱:</td>
+									<td>
+										<input type="text" placeholder="815980812@qq.com" name="mailbox">
+									</td>
+								</tr>
+								<input type="submit" class="btn btn-info" value="确认修改" />
+								<input type="reset" class="btn btn-info" value="重置" style="margin-left: 30px;" />
+
+							</table>
+						</form>
+
+					</div>
+				</div>
+			</div>
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+			<div class="row div5">
+				<div class="yejiao">
+					<a target="_blank" href=" " class="a1">达内BBS论坛</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">www.tedu.cn</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">官方微博</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">诚聘精英</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">广告服务</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">联系方式</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">隐私政策</a><b>&ensp;&ensp;|&ensp;&ensp;</b>
+					<a target="_blank" href=" " class="a1">服务条款</a>
+				</div>
+				<div class="yejiao1">
+					<p>达内BBS论坛 版权所有</p>
+				</div>
+
+			</div>
+		</div>
+	</body>
+
+</html>

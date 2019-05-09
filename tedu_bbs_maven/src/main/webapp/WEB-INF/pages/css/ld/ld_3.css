@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+body { margin:0;}
+
+.footBlueMain li { background:url(http://himg2.huanqiu.com/statics/hq2013/images/index/index.png) no-repeat;}
+.fotherNew .iconList a { background:url(http://himg2.huanqiu.com/statics/hq2013/images/index2015/icon.png) no-repeat;}
+/*********** 尾巴 ************/
+.footNew { display:block; width:100%; min-width:1000px; margin:0 auto 0;}
+.footOutNew { display:block; background:#0a70b1; width:100%; height:79px; border-bottom:#d0cfd0 3px solid; padding:11px 0 0;}
+/**/
+.fotherNew { background:#0a70b1; display:block; width:1000px; height:70px; line-height:22px; overflow:hidden; text-align:left; margin:0 auto; border-right:#3288bf 1px solid; position:relative;}
+.fotherNew a:link { color:#89c3eb; font-size:12px; text-decoration:none;}
+.fotherNew a:visited { color:#5db7f5;}
+.fotherNew a:hover { color:#ceebff; text-decoration:none;}
+.fotherNew a:active { color:#ceebff;}
+.fotherNew ul { margin:0; padding:0;}
+.fotherNew li { background:none; padding:0 40px; float:left; border-left:#3288bf 1px solid; overflow:hidden;}
+.fotherNew li.fir { width:120px;}
+.fotherNew li.fir a { display:block;}
+.fotherNew li.sec { width:210px;}
+.fotherNew li.sec .iconList { width:270px;}
+.fotherNew li.sec a { width:114px; float:left;}
+.fotherNew li.last { width:465px; margin:0; padding-right:0;}
+.fotherNew li.last a { margin:0 18px 0 0;}
+.fotherNew h3 ,.fotherNew dt ,.fotherNew a { color:#89c3eb; text-align:left;}
+/*
+.fotherNew a:visited { color:#5db7f5;}
+.fotherNew a:hover { color:#ceebff; text-decoration:none;}
+*/
+.fotherNew h3 { display:block; height:20px; line-height:20px; font-family:Microsoft YaHei,SimSun; font-size:14px; color:#ceebff !important; font-weight:bold; border:none; padding:0; margin:0 0 3px; text-indent:12px; overflow:hidden;}
+.fotherNew dl { margin:12px  0 0;}
+.fotherNew dt { position:relative; width:240px; float:left; margin-right:10px;}
+.fotherNew dd { width:270px; float:left;}
+.fotherNew dt em { color:#fff; margin-right:8px;}
+.fotherNew .iconList a { display:inline-block; background-position:0 -163px; padding-left:12px;}
+.fotherNew .iconList .footTxtLife { width:72px;}
+/**/
+.fLinkNew { height:40px; text-align:center; color:#f0f0f0; font-size:12px; padding:0 0 8px;}
+.fLinkNew a:link { color:#666; text-decoration:none; font-size:12px; height:40px; line-height:40px; margin:0 10px;}
+.fLinkNew a:visited { color:#999;}
+.fLinkNew a:hover { color:#cd0200; text-decoration:underline;}
+.fLinkNew a:active { color:#666;}
+.flinkMainNew { width:1000px; margin:0 auto; height:40px; line-height:40px;}
+.flinkMainNew em { color:#e5e5e5;}
+.fLinkNew .marWid a,.fLink .marWidMain a { margin:0 15px; text-indent:0; display:inline-block; height:25px; line-height:25px; color:#5e5e5e; padding:0;}
