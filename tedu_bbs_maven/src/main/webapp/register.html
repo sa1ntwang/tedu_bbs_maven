@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0038)http://www.miaodiyun.com/register.html -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -8,27 +7,23 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>注册-TEDU_BBS</title>
 <link rel="stylesheet" href="./css/bootstrap.css" />
-<link rel="stylesheet" href="./css/hk_css1.css" />
+
 <link rel="stylesheet" href="./css/hk_font-awesome.min.css" />
 <link rel="stylesheet" href="./css/hk_md.login.css" />
-
-<!--[if lte IE 8]>
-        <script src="templates/js/libs/support/respond.min.js"></script>
-    <![endif]-->
-<!--[if lt IE 9]>
-        <script src="templates/js/libs/support/html5shiv.js"></script>
-    <![endif]-->
 <link rel="stylesheet" href="./css/hk_layer.css"
 	id="layui_layer_skinlayercss" style="" />
-
-
+	
+	<script type="text/javascript" charset="UTF-8"
+		src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" charset="UTF-8"
+		src="./js/bootstrap.min.js"></script>
+		
 </head>
 <body>
 	<header id="header">
 		<div class="inner clearfix row">
 			<div class="pull-left col-md-3">
-
-				<a href="" class="logo"><img src="./imgs/logo.jpg" alt=""></a>
+				<a href="homepage" class="logo"><img src="./imgs/logo.jpg" alt=""></a>
 			</div>
 			<div class="pull-left col-md-5">
 				<span class="logo-text text-center center-block">用户注册</span>
@@ -55,126 +50,58 @@
 		<div class="inner clearfix">
 			<div class="register-form">
 				<div class="form-bd">
-					<form action="/vaaaaaaaaaaaaerifyCode" method="post" id="myform"
-						name="regform" class="form-horizontal">
-						
+					<form action="#"
+						method="post" id="myform" name="regform" class="form-horizontal">
+
 						<div class="form-title col-xs-12">
-							账户设置 <small> - 手机号作为您的登录帐号使用</small>
+							账户设置 
 						</div>
 						<div class="form-group clearfix">
 							<label class="col-xs-3 control-label" for="uName">用户名</label>
 							<div class="col-xs-9 control-col">
-								<input type="text" class="form-control" placeholder="请输入用户名" id="uName"/>
-								<!-- ajaxurl="/reg/check-email" -->
-								<div>
-									<p id="uNameDiv" style="color:red;font-weight:bold">123</p>
-								</div>
+								<input type="text" class="form-control input-check" placeholder="请输入用户名" id="uName" />
+								<label id="uNameLable" class="label" style="color:red"></label>
 							</div>
 						</div>
 						<div class="form-group clearfix">
 							<label class="col-xs-3 control-label" for="uMobile">手机号码</label>
 							<div class="col-xs-9 control-col">
-								<input type="text" class="form-control" placeholder="请输入手机号码"
-									id="uMobile" ></input>
-								<!-- ajaxurl="/reg/check-phone"> -->
+								<input onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="form-control input-check" placeholder="请输入手机号码" id="uMobile" />
+								<label id="uMobileLable" class="label" style="color:red"></label>
 							</div>
 						</div>
 						<div class="form-group clearfix">
-							<label class="col-xs-3 control-label">滑动验证码</label>
-							<div class="col-xs-9">
-								<div id="captcha_div">
-									<div class="yidun yidun--light yidun--float yidun--jigsaw"
-										style="width: 100%; min-width: 220px">
-										<div class="yidun_panel"
-											style="bottom: 40px; padding-bottom: 15px">
-											<div class="yidun_panel-placeholder">
-												<iframe class="yidun_cover-frame"
-													src="./saved_resource.html"></iframe>
-												<div class="yidun_bgimg">
-													<img class="yidun_bg-img" style="border-radius: 2px"
-														src="./imgs/1.jpg"> <img class="yidun_jigsaw"
-														src="./imgs/2.png">
-												</div>
-												<div class="yidun_loadbox" style="border-radius: 2px">
-													<div class="yidun_loadbox__inner">
-														<div class="yidun_loadicon"></div>
-														<span class="yidun_loadtext">加载中...</span>
-													</div>
-												</div>
-												<div class="yidun_top">
-													<a class="yidun_feedback" title="反馈"
-														href="http://support.dun.163.com/feedback/captcha?captchaId=3aa8d8bffbd249df9e411c9681461d44&amp;token=c00a8e350ac14a888d599b94c89a5632"
-														target="_blank"></a>
-													<div class="yidun_refresh" title="刷新"></div>
-												</div>
-											</div>
-										</div>
-										<div class="yidun_control"
-											style="height: 40px; border-radius: 2px">
-											<div class="yidun_slide_indicator"
-												style="height: 40px; border-radius: 2px"></div>
-											<div class="yidun_slider"
-												style="width: 40px; border-radius: 2px">
-												<!-- 分支二兼容旧接口 -->
-												<span class="yidun_slider__icon"></span>
-											</div>
-											<div class="yidun_tips" style="line-height: 40px">
-												<span class="yidun_tips__icon"></span> <span
-													class="yidun_tips__text">向右拖动滑块填充拼图</span> <span
-													class="yidun_tips__answer hide"></span>
-											</div>
-										</div>
-									</div>
-									<input type="hidden" name="NECaptchaValidate" value=""
-										class="yidun_input">
-								</div>
-							</div>
-						</div>
-						
-						<div class="form-group clearfix">
-							<div class="col-xs-9 col-xs-offset-3 control-col code-mode"
-								data-email="#uEmail" data-mobile="#uMobile"
-								data-imgcode="#imgCode">
-								<button class="btn btn-primary " type="button"
+							<div class="col-xs-9 col-xs-offset-3 control-col code-mode">
+								<button class="btn btn-primary checkBtn1" type="button"
 									style="width: 48%; margin-right: 2%; margin-top: 0;"
-									data-type="sms" onclick="codeVerification(this)"
+									onclick="codeVerification(this)"
 									disabled="true">获取短信验证码</button>
-								
 							</div>
 						</div>
 						<div class="form-group clearfix">
-							<!--用于解决360极速浏览器的兼容模式下的自动填充-->
-							<input type="text" disabled="disabled" id="code" name="code"
-								style="display: none;"> <input type="password"
-								disabled="disabled" id="password" style="display: none;">
-							<!--用于解决360极速浏览器的兼容模式下的自动填充-->
-							<label class="col-xs-3 control-label" for="code">手机验证码</label>
+							<label class="col-xs-3 control-label" for="verCode">手机验证码</label>
 							<div class="col-xs-9 control-col">
-								<input type="text" class="form-control" placeholder="请输入手机验证码"
-									maxlength="6" name="code" id="code" datatype="n6-6"
-									nullmsg="请输入您的手机验证码" errormsg="请输入6位手机验证码" autocomplete="off">
+<!-- 								<input type="number" oninput="if(value.length>11)value=value.slice(0,11)" class="form-control input-check" placeholder="请输入手机验证码" id="verCode" autocomplete="off">
+ -->								<input onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="6" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="form-control input-check" placeholder="请输入手机验证码" id="verCode" autocomplete="off">
+								<label id="verCodeLable" class="label" style="color:red"></label>
 							</div>
 						</div>
 						<div class="form-group clearfix">
 							<label class="col-xs-3 control-label" for="password">密码</label>
 							<div class="col-xs-9 control-col">
-								<input type="password" class="form-control"
-									placeholder="请设置您的密码" maxlength="16" id="password"
-									name="developer.passwd" datatype="*6-18" nullmsg="请输入您的密码"
-									errormsg="请输入正确的密码" autocomplete="off">
+								<input type="password" class="form-control input-check" maxlength="16"
+									placeholder="请设置您的密码" id="password" autocomplete="off">
+								<label id="passwordLable" class="label" style="color:red"></label>
 								<div class="slogon" style="margin-top: 5px;">6-16个字母、数字或者英文符号，区分大小写</div>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="control-col col-xs-12">
-								<button class="btn btn-primary btn-lg btn-login" type="button"
-									name="bnt" id="get-form">确定注册</button>
+								<button class="btn btn-primary btn-lg btn-login checkBtn2" type="button"
+									name="bnt" id="get-form" disabled="true">确定注册</button>
 							</div>
-							<div class="validform-box Validform_checktip Validform_wrong"
-								style="display: none">
-								<i class="msg-icon"></i><label for="" class="label"></label>
-							</div>
+							
 							<div class="control-col col-xs-12">
 								<a class="btn btn-default btn-lg btn-login" href="">已有帐号，立即登录</a>
 							</div>
@@ -187,157 +114,101 @@
 	<footer id="footer">
 		<div class="copyright">tedu_bbs开发所有</div>
 	</footer>
-
-	<div style="display: none">
-		<script src="./js/hk_hm.js"></script>
-		<script src="./files/z_stat.php" language="JavaScript"></script>
-		<script src="./files/core.php" charset="utf-8" type="text/javascript"></script>
-
-		<script>
-			var _hmt = _hmt || [];
-			(function() {
-				var hm = document.createElement("script");
-				hm.src = "//hm.baidu.com/hm.js?e1385c7969f3f5d9ffa4c00b2264865a";
-				var s = document.getElementsByTagName("script")[0];
-				s.parentNode.insertBefore(hm, s);
-			})();
-		</script>
-	</div>
-
-	<script charset="utf-8" src="./js/hk_v.js"></script>
-	
-	<script type="text/javascript" charset="UTF-8" async=""
-		src="./files/core.php"></script>
-	<script type="text/javascript" charset="UTF-8" async=""
-		src="./js/hk_light.v2.10.8.min.js"></script>
-
-
-	<script type="text/javascript" src="./js/hk_jquery.min.js"></script>
-	<script type="text/javascript" src="./js/hk_Validform_v5.3.2_min.js"></script>
-	<script type="text/javascript" src="./js/hk_layer.js"></script>
-	<script type="text/javascript" src="./js/hk_md.login.js"></script>
-	<script type="text/javascript" src="./js/hk_jquery.cookie.js"></script>
-	<script src="./js/hk_load.min.js"></script>
 	<script type="text/javascript">
-	var isSubmit = false;
-	$(function() {
-		
-		$('#uMobile').bind('input propertychange', function() {
-			if ($(this).val().length == 11) {
-				$(this).blur().focus();
-			}
-		});
-
-		$('#imgCode').bind('input propertychange', function() {
-			if ($(this).val().length == 4) {
-				$(this).blur().focus();
-			}
-		});
-		$("#term").load("./term.html  .about-box");
-
-		$('.captcha-img').hover(function() {
-			layer.tips('如无显示验证码图片,点此刷新', '.captcha-img', {
-				tips : [ 1, '#000000' ]
-			});
-		}, function() {
-			return;
+		var b1=b2=b3=b4=false;
+		//console.log(b1);
+		$(function(){
+			$(".input-check").on("focus",clearLable);	
+			$(".input-check").on("blur",checkThis);	
+			//$(".input-check").on("click",sendCode);	
 		});
 		
-		var nullmsg="请输入您的邮箱地址";
-		var errormsg="请输入正确的邮箱地址" ;
-		var username=$("#uName").val();
-			console.log("username:"+username);
-			console.log("$('#uName').html():"+$('#uName').html());
-		var regx="/^[a-zA-Z\u4e00-\u9fa5]{1}[a-zA-Z0-9_\u4e00-\u9fa5]{2,19}$/";
-		
-		$("#uName").on("focus",function(){
-			$("#uNameDiv").empty();
-		});
-		$("#uName").blur(function(){
-			console.log("失去焦点");
-			if(username==null||username==""){
-				$("#uNameDiv").val(nullmsg);
-			}else if(!username.test(regx)){
-				$("#uNameDiv").val(errormsg);
-			}else{
-				$("#uNameDiv").val("");
-			}
-			
-		})
-	});
-	function checkUName(){
-	}
-	
-	
-	
-	
-	
-	
-		(function() {
-			(function() {
-				var loginId = window.location.href;
-				var sessionBd_vid = window.sessionStorage.getItem('bd_vid');
-				console.log(sessionBd_vid);
-				if (sessionBd_vid) {
-					$("#loginId").val(loginId + '?bd_vid=' + sessionBd_vid);
-				} else {
-					$("#loginId").val(loginId);
-				}
-				$("#timestamp").val((new Date()).getTime());
-			})();
-		})();
-		$("#myform").initValidform("regPage");
-		$("#qmymark").val($.cookie("qmymark"));
-
-		$("#get-form").on('click', function() {
-			var validate = $("*[name='NECaptchaValidate']").val();
-			if (validate == '' || validate == null) {
-				layer.msg('请滑动验证码');
-				return false;
-			}
-			$("#myform").submit();
-		});
-		
-		initNECaptcha({
-			captchaId : '3aa8d8bffbd249df9e411c9681461d44',
-			element : '#captcha_div',
-			mode : 'float', // 如果要用触发式，这里改为float即可
-			width : '100%',
-			onVerify : function(err, ret) {
-				if (!err) {
-					// ret['validate'] 获取二次校验数据
-				}
-			}
-		}, function(instance) {
-			// 初始化成功后得到验证实例instance，可以调用实例的方法
-		}, function(err) {
-			// 初始化失败后触发该函数，err对象描述当前错误信息
-		});
-		
-			
-			
-		
-		
-		
-		
-		function checkForm() {
-			var username = $('#uName').val();
-			var code = $("input.input[name='code']").val();
-			/* ================================================================================================================================================================================== */
-			$.post("tedu_bbs_maven/checkForm", {
-				"code" : code,
-				"username" : username
-			}, function(data) {
-				if (data.code == "0") { //成功
-					return true;
-				} else {
-					layer.msg("请填写正确的短信验证码");
-					return false;
-				}
-			});
+		//得到焦点,清空当前对象对应的提示信息
+		function clearLable(){
+			$(this).next().empty();
 		}
+		//失去焦点时,自动校验当前对象
+		function checkThis(){
+		    var lName = $('label[for="'+ this.id +'"]').text();
+			var msgLable = $(this).next();
+			var currentText = $(this).val();
+		    var msg="";
+			var regx="";
+			
+			//debugger				
+			switch (lName) {
+               case ("用户名"):
+               	regx=/^[a-zA-Z\u4e00-\u9fa5]{1}[a-zA-Z0-9_\u4e00-\u9fa5]{2,19}$/;
+               	if(currentText.length==0){
+   					msg="用户名不能为空!";
+					b1=false;
+   				}else if(!regx.test(currentText)){
+					msg="用户名:3-20长度的汉字字母数字以及下划线!";
+					b1=false;
+				}else{
+					b1=true;
+				}
+                   break;
+               case ("手机号码"):
+               	regx=/^1(3|4|5|7|8)\d{9}$/;
+            	   if(currentText.length==0){
+					msg="手机号码不能为空!";
+					b2=false;
+				}else if(!regx.test(currentText)){
+					b2=false;
+					msg="请输入正确的手机号!";
+				}else{
+					b2=true;
+				}
+                   break;
+               case ("密码"):
+               	//密码强度太弱
+               	regx=/^(?:\d+|[a-zA-Z]+|[!@#$%^&*]+)$/;
+              		if(currentText.length==0){
+					msg="密码不能为空!";
+					b3=false;
+				}else if(currentText.length<6){
+               		msg="请输入6位以上密码!"
+					b3=false;
+               	}else if(regx.test(currentText)){
+               		msg="至少包含数字,字母,常用符号中的两种!"
+					b3=false;
+               		regx=/^(?![a-zA-z]+$)(?!\d+$)(?![!@#$%^&*]+$)[a-zA-Z\d!@#$%^&*]+$/;
+               	}else{
+					msg="";
+					b3=true;
+               	}
+                   	break;
+               case ("手机验证码"):
+               	if(currentText.length==0){
+   					msg="手机验证码不能为空!";
+					b4=false;
+   				}else if(currentText.length<6){
+       				msg="请输入完整的验证码!";
+					b4=false;
+       			}else{
+       				b4=true;
+       			}
+                   break;
+			}
+			msgLable.text(msg); 
+			if(b2){
+				$(".checkBtn1").attr("disabled",false);
+			}else{
+				$(".checkBtn1").attr("disabled",true);
+			}
+			if(b1&&b2&&b3&&b4){
+				$(".checkBtn2").attr("disabled",false);
+			}else{
+				$(".checkBtn2").attr("disabled",true);
+			}
+		}
+		
 	</script>
-
+	<script type="text/javascript" charset="UTF-8"
+		src="js/sendCode.js"></script>
+	<script type="text/javascript" src="./js/hk_layer.js"></script>
+		
 
 </body>
 </html>

@@ -30,7 +30,7 @@ public class RegisterController {
 	@ResponseBody
 	public String sendMessage(String phone) {
 		String mobile = String.valueOf(phone);
-		System.out.println(mobile);
+		System.out.println("手机号:"+mobile);
 		//前端ajax请求的数据名:result
 		String result = SendMessages.sendMessage(mobile);
 		return result;
