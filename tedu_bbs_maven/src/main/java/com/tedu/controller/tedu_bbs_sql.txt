@@ -1,0 +1,194 @@
+mysql -uroot -p892593
+set names gbk;
+drop database if exists tedu_bbs_db;
+create database tedu_bbs_db;
+use tedu_bbs_db;
+drop table if exists admins;	
+create table admins(			-- 管理员表
+a_id int primary key auto_increment,	-- id 主键,自增
+a_name varchar(20) not null unique,	-- 真实姓名 非空,唯一
+a_phone varchar(11) not null unique,	-- 电话 非空,唯一
+f_id int,				-- 板块id
+u_id int,				-- 用户id(外键)
+examine tinyint default 0		-- 审核状态 非空(0,待审核 1,审核通过)
+);
+
+
+
+drop table if exists user_info;
+create table user_info(			-- 用户表
+user_id int primary key auto_increment,	-- 用户id 主键,自增
+user_name varchar(20) not null unique,	-- 昵称 非空,唯一
+phone varchar(11) not null unique,	-- 注册电话 非空,唯一
+password varchar(32) not null,		-- 密码 非空
+user_lock tinyint default 0,		-- 锁定状态 非空(0,正常 1,锁定)
+user_freeze tinyint default 0,		-- 冻结状态 非空(0,正常 1,冻结)
+lastLogin datetime			-- 最后登录时间
+);
+
+
+drop table if exists post_tab;
+create table post_tab(			-- 发帖表
+post_id int primary key auto_increment,	-- 帖子id 主键,自增
+writer_id int,				-- 用户id 外键
+in_f_id int,				-- 所属板块 外键
+post_name varchar(40) not null,		-- 帖子标题 非空
+post_body text not null,		-- 帖子主体 非空
+view_count int,				-- 浏览次数
+write_back int,				-- 回帖次数
+last_update datetime not null,		-- 最后更新时间 非空
+write_back_list text,			-- 回帖列表 (文件路径)
+post_status tinyint not null,		-- 帖子状态 非空 (草稿,发表,回收站)
+
+show_on_home tinyint not null,		-- 是否在首页展示
+recommended tinyint not null		-- 是否加精
+);
+drop table if exists forum_info;
+create table forum_info(		-- 板块信息
+forum_id int primary key auto_increment,-- 板块id 主键,自增
+forum_name varchar(20) not null unique,	-- 板块名字 非空,唯一
+follow_users int not null,		-- 关注用户量 非空
+pageviews int not null,			-- 总浏览量 非空
+forum_status tinyint not null,		-- 板块状态(0,无管理员 1,有管理员)
+
+);
+
+drop table if exists zone;
+create table zone(			-- 个人空间
+zone_id int primary key auto_increment,	-- 空间id 主键,自增
+u_id int,				-- 用户id 外键
+post_id_list text,			-- 个人空间文章列表
+message_board text,			-- 留言板
+friends text,				-- 好友列表
+photos text,				-- 照片列表
+sign varchar(30)			-- 个性签名
+);
+
+drop table if exists emp;		-- 工作人员表
+create table if not exists emp(		-- 对应投诉建议表
+id int primary key auto_increment,	-- id 主键
+name varchar(30) unique notnull,	-- 姓名
+area varchar(50) not null,		-- 地区(长沙河西cbd中心)
+job varchar(20),			-- 职位(项目经理)
+sug_count int,			-- 收到的投诉建议数量
+tel varchar(11)				-- 电话(设置普通用户不可见)
+); 
+
+drop table if exists tuition;		-- 学费表(优惠政策)
+create table if not exists tuition(	
+id int primary key auto_increment,
+course varchar(20) not null,		-- 课程名
+costs int not null,			-- 费用
+discounting tinyint not null default 0,	-- 是否打折(0,不打折,1,打折)
+content varchar(100)			-- 优惠描述
+start date,			-- 优惠的开始时间
+end date				-- 结束时间
+);
+
+drop table if exists suggestion;
+create table if not exists suggestion(	-- 投诉建议表
+id int primary key auto_increment,	-- id 主键
+u_id int,				-- 投诉人
+e_id int,				-- 被投诉人
+topic varchar(20) not null,		-- 主题
+context varchar(50) not null,		-- 内容
+type tinyint,				-- 类型(1,投诉,2,建议)
+s_time datetime				-- 投诉时间
+);
+
+drop table if exists stu_news;
+create table if not exists stu_news(	-- 就业喜报
+id int primary key auto_increment,	-- id主键
+name varchar(20) not null,		-- 姓名
+area varchar(30),			-- 地区
+classname varchar(20),			-- 班级名称(CGB1902)
+t_id int,				-- 职发id
+m_id int,				-- 项目经理id
+com_name varchar(30) not null,		-- 公司名字
+job varchar(20) not null,		-- 职位
+sal double not null,			-- 薪资
+record varchar(20) not null,		-- 学历
+school varchar(30) not null		-- 毕业院校
+
+);
+
+
+
+-- 添加外键
+-- alter table admins add constraint fk1 foreign key(f_id) references forum_info(forum_id);
+-- alter table admins add constraint fk2 foreign key(u_id) references user_info(user_id);
+-- alter table post_tab add constraint fk3 foreign key(writer_id) references user_info(user_id);
+-- alter table post_tab add constraint fk4 foreign key(in_f_id) references forum_info(forum_id);
+-- alter table zone add constraint fk5 foreign key(u_id) references user_info(user_id);
+
+
+
+-- 插入数据
+-- 板块
+insert into forum_info values(null,'tedu_bbs','0','0','0');
+insert into forum_info values(null,'web前端','200','1000','0');
+insert into forum_info values(null,'CGB','200','1000','0');
+insert into forum_info values(null,'JSD','200','1000','0');
+insert into forum_info values(null,'UI设计','200','1000','0');
+insert into forum_info values(null,'BVD','200','1000','0');
+insert into forum_info values(null,'就业交流','200','1000','0');
+insert into forum_info values(null,'行业新闻','200','1000','0');
+insert into forum_info values(null,'达内长沙西中心','200','1000','0');
+insert into forum_info values(null,'情感交流','200','1000','0');
+insert into forum_info values(null,'投诉与建议','200','1000','0');
+
+-- 用户
+insert into user_info values(null,'tw','15110704595','csu1120.','0','0','2019-4-26');
+insert into user_info values(null,'tw1','18570742593','csu1120.','0','0','2019-4-26');
+insert into user_info values(null,'hk','13975845367','hk123','0','0','2019-4-26');
+insert into user_info values(null,'ld','13080538586','ld123','0','0','2019-4-26');
+
+-- 管理员
+
+insert into admins values(null,'陶旺','15110704595',1,1,1);
+insert into admins values(null,'黄康','34422252222',2,2,1);
+dfds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

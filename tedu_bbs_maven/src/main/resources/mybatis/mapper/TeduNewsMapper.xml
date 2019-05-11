@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tedu.dao.TeduNewsMapper">
+
+	<insert id="createStuNews">
+		insert into stu_news values(
+			#{id},#{name},#{area},#{classname},#{tId},#{mId},#{comName},#{job},#{sal},#{record},#{school}
+		)
+	</insert>
+	<delete id="deleteStuNewsById">
+		delete from stu_news where id=#{id}
+	</delete>
+	<update id="updateStuNewsById">
+		update stu_news set 
+		name=#{name},area=#{area},classname=#{classname},t_id=#{tId},m_id=#{mId},com_name=#{comName},job=#{job},sal=#{sal},record=#{record},school=#{school}
+		where id=#{id}
+	</update>
+	<select id="findStuNewsById" resultType="com.tedu.pojo.StuNews">
+		select
+		id,name,area,classname,t_id tId,m_id mId,comName,job,sal,record,school
+		from stu_emp
+		where id=#{id}		
+	</select>	
+	<select id="findAllStuNews" resultType="com.tedu.pojo.StuNews">
+		select
+		id,name,area,classname,t_id tId,m_id mId,comName,job,sal,record,school
+		from stu_emp
+	</select>	
+
+
+	
+	<insert id="createSuggestion">
+		insert into suggestion values(
+			#{id},#{uId},#{eId},#{topic},#{context},#{type},#{sTime}
+		)
+	</insert>
+	<delete id="deleteSuggestionById">
+		delete from suggestion where id = #{id}
+	</delete>
+	<update id="updateSuggestionById">
+		update suggestion set 
+		u_id=#{uId},e_id=#{eId},topic=#{topic},context=#{context},type=#{type},#s_time={sTime}
+	</update>
+	<select id="findSuggestionById" resultType="com.tedu.pojo.Suggestion">
+		select id,u_id uId,e_id eId,topic,context,type,s_time
+		from suggestion
+		where id = #{id}
+	</select>	
+	<select id="findAllSuggestion" resultType="com.tedu.pojo.Suggestion">
+		select id,u_id uId,e_id eId,topic,context,type,s_time
+		from suggestion
+	</select>	
+	
+
+	
+	<insert id="createEmp">
+		insert into emp 
+		values(#{id},#{name},#{job},#{tel})
+	</insert>
+	<delete id="deleteEmpById">
+		delete from emp where id=#{id}
+	</delete>
+	<update id="updateEmpById">
+		update emp 
+		set 
+		name=#{name},area=#{area},job=#{job},tel=#{tel}
+	</update>
+	<select id="findEmpById" resultType="com.tedu.pojo.Emp">
+		select id,name,area,job,tel
+		from emp where id=#{id}
+	</select>	
+	<select id="findAllEmp" resultType="com.tedu.pojo.Emp">
+		select id,name,area,job,tel
+		from emp
+	</select>	
+
+
+	
+	<insert id="createTuition">
+		insert into tuition values(
+			#{id},#{course},#{costs},#{discounting},#{content},#{start},#{end}
+		)
+	</insert>
+	<delete id="deleteTuitionById">
+		delete from tuition where id = #{id}
+	</delete>
+	<update id="updateTuitionById">
+		update tuition set 
+		course=#{course},costs=#{costs},
+		discounting=#{discounting},
+		content=#{content},start=#{start},end={end}
+	</update>
+	<select id="findTuitionById" resultType="com.tedu.pojo.Tuition">
+		select id,course,costs,discounting,content,start,end
+		from tuition where id=#{id}
+	</select>	
+	<select id="findAllTuition" resultType="com.tedu.pojo.Tuition">
+		select id,course,costs,discounting,content,start,end
+		from tuition
+	</select>	
+</mapper>
