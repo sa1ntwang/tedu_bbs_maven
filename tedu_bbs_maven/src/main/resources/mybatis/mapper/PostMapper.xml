@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 门店表的映射文件 namespace值为对应接口的全路径 -->
+<mapper namespace="com.tedu.dao.PostMapper">
+	<select id="findById" resultType="com.tedu.pojo.Post">
+		select post_id postId,writer_id writerId,in_f_id inFId,
+		post_name postName,post_body postBody,view_count viewCount,
+		write_back writeBack,last_update lastUpdate,write_back_list writeBackList,
+		post_status postStatus from post_tab where post_id=#{postId}
+	</select>
+    <update id="updateById">
+    	update post_tab set writer_id=#{writerId},in_f_id=#{inFId},post_name=#{postName},
+    	post_body=#{postBody},view_count=#{viewCount},write_back=#{writeBack},last_update=#{lastUpdate},
+    	write_back_list=#{writeBackList},post_status=#{postStatus},show_on_home=#{showOnHome},
+    	recommended=#{recommended} where post_id=#{postId}
+    </update>
+    <update id="addOne">
+    	insert into post_tab values(#{postId},#{writerId},#{inFId},#{postName},#{postBody},#{viewCount}
+    	#{writeBack},#{lastUpdate},#{writeBackList},#{postStatus},#{showOnHome},#{recommended})
+    </update>
+    <update id="deleteById">
+    	delete from post_tab where post_id=#{postId}
+    </update>
+</mapper>

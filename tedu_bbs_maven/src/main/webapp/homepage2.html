@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TEDU_BBS-达内人自己的论坛</title>
+
+<script type="text/javascript" src="./js/ql/oneapm.js"></script>
+<script src="./js/ql/jquery1.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="./css/ql/style.css">
+<!-- <link rel="stylesheet" href="https://t1.huanqiu.cn/97716718eb0408bd0738938f58daf55b.css"> -->
+<!-- 根据缓存和设备跳转到相应的页面 -->
+<!-- <script src="./js/ql/adapter_index.js"></script> -->
+</head>
+<body>
+
+	<!-- 请置于所有广告位代码之前 -->
+	<!-- <script type="text/javascript"
+		src="./js/ql/base.js?a=1"></script> -->
+	<!--统计代码-->
+	<!-- <div style="display: none;">
+		<script type="text/javascript">var _bdhmProtocol=(("https:"==document.location.protocol)?" https://":" http://");document.write(unescape("%3Cscript src='"+_bdhmProtocol+"hm.baidu.com/h.js%3F1fc983b4c305d209e7e05d96e713939f' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+ -->
+	<div class="wrap">
+		<!-- 导航功能区 begin-->
+		<div class="navTop">
+			<div class="navTopCon">
+				<a href="#" class="logo"><img src="./imgs/ql/logo.gif"
+					alt="达内BBS" class="logop" style="width: 175px" /></a>
+				<div class="navTopConRight">
+					<span class="resLink" id="ui-login"> <a href="zhuce"
+						class="btnRes">注册</a><a href="denglu" class="btnLogin">登录</a>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- 导航功能区 end-->
+		
+		<!-- 导航 begin-->
+		<div class="navBg">
+			<div class="nav">
+				<div class="navCon">
+					<ul class="clear" >
+						<li><a href="theme" target="_blank">TEDU_BBS<span><em><i></i></em></span></a><strong></strong>
+							<a href="theme" target="_blank">栏目1<span><em><i></i></em></span></a><strong></strong>
+							<a href="theme" target="_blank">栏目2<span><em><i></i></em></span></a><strong></strong>
+							<a href="theme" target="_blank">栏目3<span><em><i></i></em></span></a><strong></strong>
+							<a href="theme" target="_blank">栏目4<span><em><i></i></em></span></a><strong></strong>
+							<a href="theme" target="_blank">栏目5<span><em><i></i></em></span></a><strong></strong>
+							<a href="theme" target="_blank">栏目6<span><em><i></i></em></span></a><strong></strong>
+							<a href="theme" target="_blank">我的关注<span><em><i></i></em></span></a><strong></strong>
+							<a href="theme" target="_blank">本站推荐<span><em><i></i></em></span></a><strong></strong>
+							<a href="theme" target="_blank">发帖<span><em><i></i></em></span></a><strong></strong>
+							<a href="personal_zone" target="_blank">个人中心<span><em><i></i></em></span></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 导航 end-->
+
+		<!-- 内容外侧 begin-->
+		<div class="wrapBg">
+			<div class="wrapPic">
+				<!-- 内容部分 begin-->
+				<div class="wrapCon">
+					<!-- 第一部分 begin-->
+					<div class="conFir">
+						<!-- 左侧 begin-->
+						<div class="leftFir">
+							<!-- 焦点图 begin -->
+							<div id="foucsBox">
+								<ul class="imgCon" id="imgCon">
+									<!--展示图片开始-->
+									<li><a href="#" title="厄瓜多尔已撤销对阿桑奇的政治庇护 阿桑奇被英国逮捕"
+										target="_blank"> <img src="./imgs/ql/banner_lb1.jpg" />
+									</a>
+										<div class="imgTitle">
+											<a href="#" target="_blank" title="厄瓜多尔已撤销对阿桑奇的政治庇护 阿桑奇被英国逮捕">厄瓜多尔已撤销对阿桑奇的政治庇护
+												阿桑奇被英国逮捕</a>
+										</div>
+										<div class="showPage"></div></li>
+									<li><a href="#" title="罗马尼亚军舰协同北约军舰在黑海举行演习"
+										target="_blank"> <img src="./imgs/ql/banner_lb2.jpg" />
+									</a>
+										<div class="imgTitle">
+											<a href="#" target="_blank" title="罗马尼亚军舰协同北约军舰在黑海举行演习">罗马尼亚军舰协同北约军舰在黑海举行演习</a>
+										</div>
+										<div class="showPage"></div></li>
+									<li><a href="#" title="苏丹民众欢庆总统巴希尔倒台" target="_blank">
+											<img src="./imgs/ql/banner_lb3.jpg" />
+									</a>
+										<div class="imgTitle">
+											<a href="#" target="_blank" title="苏丹民众欢庆总统巴希尔倒台">苏丹民众欢庆总统巴希尔倒台</a>
+										</div>
+										<div class="showPage"></div></li>
+									<li><a href="#" title="两只大熊猫亮相丹麦动物园获热烈欢迎 他们是真喜欢！"
+										target="_blank"> <img src="./imgs/ql/banner_lb4.jpg" />
+									</a>
+										<div class="imgTitle">
+											<a href="#" target="_blank" title="两只大熊猫亮相丹麦动物园获热烈欢迎 他们是真喜欢！">两只大熊猫亮相丹麦动物园获热烈欢迎
+												他们是真喜欢！</a>
+										</div>
+										<div class="showPage"></div></li>
+									<li><a href="#" title="高精度卫星照片捕捉地表奇观 展现地球之美"
+										target="_blank"> <img src="./imgs/ql/banner_lb5.jpg" />
+									</a>
+										<div class="imgTitle">
+											<a href="#" target="_blank" title="高精度卫星照片捕捉地表奇观 展现地球之美">高精度卫星照片捕捉地表奇观
+												展现地球之美</a>
+										</div>
+										<div class="showPage"></div></li>
+									<!--展示图片结束-->
+								</ul>
+								<div class="foucs"></div>
+								<div class="rBtn foucsButton">
+									<span></span> <img />
+								</div>
+								<div class="lBtn foucsButton">
+									<span></span> <img />
+								</div>
+							</div>
+							<!-- 焦点图 end -->
+							<script type="text/javascript">
+                            (function() {
+                                var foucsBox = document.getElementById('imgCon'),
+                                    foucsBoxEle = foucsBox.getElementsByTagName('li'),
+                                    foucsObj = foucsBoxEle[foucsBoxEle.length - 1], t = foucsObj.getElementsByClassName("imgTitle");
+                                !t.length&&foucsObj.parentNode.removeChild(foucsObj);
+                            })();
+                        </script>
+						</div>
+						<!-- 左侧 end-->
+
+						<!-- 右侧 end-->
+						<div class="rightFir">
+							<dl class="rightFirNews">
+								<dt>
+									<a href="#" target="_blank">习近平回信勉励云南贡山独龙族群众</a>
+								</dt>
+								<dd>
+									<a href="#" target="_blank">习近平给云南省贡山县独龙江乡群众的回信</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">李克强会见克罗地亚总统</a> <a href="#"
+										target="_blank">同总理会谈</a> <a href="#" target="_blank">见议长</a>
+									<a href="#" target="_blank">声明（全文）</a>
+								</dd>
+							</dl>
+							<dl class="rightFirNews">
+								<dt>
+									<a href="#" target="_blank">社评：美国一天两张脸，中国都能因应之</a>
+								</dt>
+								<dd>
+									<a href="#" target="_blank">中美还有第十轮经贸磋商吗？商务部：密切沟通 全力以赴</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">美将多家中企列入"未经验证"清单 中方敦促美方尽快纠正错误</a>
+								</dd>
+
+							</dl>
+							<dl class="rightFirNews disAd">
+								<dt>
+									<a href="#" target="_blank">苏丹军方将发重要声明 外媒：或发生政变</a>
+								</dt>
+								<dd>
+									<a href="#" target="_blank">民主党要求国税局限期内公开特朗普纳税申报单 美财长：不给</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">美想让中国加入美俄核裁条约 外交部：已为核裁做出重要贡献</a>
+								</dd>
+							</dl>
+						</div>
+						<!-- 右侧 end-->
+					</div>
+					<!-- 第一部分 end-->
+
+					<!-- 第二部分 begin-->
+					<div class="conSec clear">
+						<!-- 左侧 begin-->
+						<div class="leftSec">
+							<!-- 左侧-环球今日评 begin-->
+							<div class="hqDayComment">
+								<div class="indexTitle">
+									<strong>环球今日评</strong> <a href="#" target="_blank">环球评论</a> <a
+										href="#" target="_blank">更多</a>
+								</div>
+
+								<div class="commentTab">
+									<ul class="commentDay">
+										<li class="commentActive"><span><strong>|</strong><b>11</b>日</span>
+											<em><i></i></em></li>
+										<li><span><strong>|</strong><b>10</b>日</span> <em><i></i></em>
+										</li>
+										<li><span><strong>|</strong><b>9</b>日</span> <em><i></i></em>
+										</li>
+										<li><span><strong>|</strong><b>8</b>日</span> <em><i></i></em>
+										</li>
+										<li><span><strong>|</strong><b>4</b>日</span> <em><i></i></em>
+										</li>
+										<li><span><strong>|</strong><b>3</b>日</span> <em><i></i></em>
+										</li>
+									</ul>
+									<ul class="commentDetail">
+										<li class="commentDshow">
+											<dl class="commentNews">
+												<dt>
+													<a href="#" target="_blank">社评：“与台湾关系法”必输给反分裂国家法</a>
+												</dt>
+												<dd>
+													<a href="#" target="_blank">周小舟：用成果破除政治偏见</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">戴斌:"网红"只是文化遗产活起来的第一步</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">王建斌：德国推动产业政策回归的背后</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">程亚文:什么才是今天最大的"全球性问题"</a>
+												</dd>
+
+											</dl>
+										</li>
+										<li>
+											<dl class="commentNews">
+												<dt>
+													<a href="#" target="_blank">社评：总抓笨拙的“中国女谍”，不丢人吗</a>
+												</dt>
+												<dd>
+													<a href="#" target="_blank">程亚文:什么才是今天最大的"全球性问题"</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">王文：中欧之间存在巨大合作空间</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">李长安：户籍改革提速，释放强劲动能</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">龙兴春:印度须防"人口红利"成"人口炸弹"</a>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="commentNews">
+												<dt>
+													<a href="#" target="_blank">社评：总抓笨拙的“中国女谍”，不丢人吗</a>
+												</dt>
+												<dd>
+													<a href="#" target="_blank">姜锋：中欧迫切需要填补话语赤字</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">刘戈：长假游为何爱往国外跑</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">李海东：美企正感受“泛政治化”寒风</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">陆洋：全球最昂贵选举背后的印度民主</a>
+												</dd>
+
+
+
+											</dl>
+										</li>
+										<li>
+											<dl class="commentNews">
+												<dt>
+													<a href="#" target="_blank">社评：耐心等候中美经贸协议的“瓜熟蒂落”</a>
+												</dt>
+												<dd>
+													<a href="#" target="_blank">齐前进：大国对小国当扶危济困为先</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">房宁：运河路上感受“另类国情”</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">【日】浜田和幸：日本为什么要限制GAFA</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">王友明：拉美能跳出非左即右困境吗</a>
+												</dd>
+
+
+
+
+
+
+											</dl>
+										</li>
+										<li>
+											<dl class="commentNews">
+												<dt>
+													<a href="#" target="_blank">社评：“遏制中国”作为一个幻象未盛先衰</a>
+												</dt>
+												<dd>
+													<a href="#" target="_blank">郭衍莹：美为何高调反对印度反卫星试验？</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">陈一新：聚力防范化解政治安全风险</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">王义桅：欧洲对华复杂心态“症结”在哪</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">劳木：60年前上中学，艰辛也温馨 </a>
+												</dd>
+
+
+
+
+
+
+
+
+
+
+											</dl>
+										</li>
+										<li>
+											<dl class="commentNews">
+												<dt>
+													<a href="#" target="_blank">单仁平：痛惜扑火队员牺牲的，真的不仅只有你</a>
+												</dt>
+												<dd>
+													<a href="#" target="_blank">汪大昭：归化球员学国歌，有啥好喷的</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">于镭：堪培拉对华示好或是一时权宜</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank"> 钱峰：印度大选花这么多钱，值不值</a>
+												</dd>
+												<dd>
+													<a href="#" target="_blank">刘志军:“人口红利”该转化为“人才红利”</a>
+												</dd>
+
+											</dl>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- 左侧-环球今日评 end-->
+
+							<!-- 左侧-海外看中国 begin-->
+							<div class="overseaChina">
+								<div class="indexTitle">
+									<strong>海外看中国</strong> <a href="#">新闻中心</a> <a href="#">更多</a>
+									<span class="udline3"></span>
+								</div>
+								<div class="overseaCNews">
+									<h4>
+										<a href="#" se_prerender_url="complete" target="_blank">美媒：在华盛顿，对华鹰派政客们得势</a>
+									</h4>
+									<h5>
+										<a href="#" se_prerender_url="complete" target="_blank">关注美中关系的分析人士就华盛顿这种政治&ldquo;气候变化&rdquo;潜滋暗长发出警告已有时日。</a>
+									</h5>
+									<p>
+										<strong>外媒<span>|</span></strong><a href="#"
+											se_prerender_url="complete" target="_blank">揭黑洞面纱
+											中国科学家做了这些事</a>
+									</p>
+									<p>
+										<strong>俄媒<span>|</span></strong><a href="#"
+											se_prerender_url="complete" target="_blank">俄近400名学生报考俄首次汉语统考</a>
+									</p>
+									<p>
+										<strong>美媒<span>|</span></strong><a href="#"
+											se_prerender_url="complete" target="_blank">兵马俑在美被偷走手指案
+											法院判了</a>
+									</p>
+									<p>
+										<strong>美媒<span>|</span></strong><a href="#"
+											se_prerender_url="complete" target="_blank">华人带活蛤蜊入美境接到控罪传票</a>
+									</p>
+								</div>
+							</div>
+							<!-- 左侧-海外看中国 end-->
+						</div>
+						<!-- 左侧 end-->
+
+						<!-- 中间 begin-->
+						<div class="centerSec">
+							<!-- 中间-视频 begin-->
+							<div class="videoBlock">
+								<div class="indexTitle">
+									<strong>视频</strong>
+								</div>
+								<div class="videoPic">
+									<ul class="videoPic clear">
+										<li><a href="#" target="_blank"> <img
+												src="./imgs/ql/p1_video1.jpg" alt="酒中的魔法" /> <span></span>
+										</a>
+											<p>
+												<a href="#" target="_blank">酒中的魔法</a>
+											</p></li>
+										<li><a href="#" target="_blank"> <img
+												src="./imgs/ql/p1_video2.jpg" alt="美军5架B52逼近俄罗斯" /> <span></span>
+										</a>
+											<p>
+												<a href="#" target="_blank">美军5架B52逼近俄罗斯</a>
+											</p></li>
+									</ul>
+								</div>
+
+								<ul class="videoNews">
+									<li><a href="#" target="_blank">亿航无人空中出租车维也纳成功试飞</a></li>
+									<li><a href="#" target="_blank">超霸气的海鲜大咖做法 </a></li>
+									<li><a href="#" target="_blank">纯手工鱼丸怎么处理最干净？</a></li>
+									<li><a href="#" target="_blank">这是红烧肉最解腻的做法！</a></li>
+								</ul>
+							</div>
+							<!-- 中间-视频 end-->
+
+							<!-- 中间-专题 begin-->
+							<div class="topicBlock">
+								<div class="indexTitle">
+									<strong>专题</strong>
+								</div>
+							</div>
+							<!-- 中间-专题 end-->
+						</div>
+						<!-- 中间 end-->
+
+						<!-- 右侧 begin-->
+						<div class="rightSec">
+							<!-- 右侧-要闻 begin-->
+							<div class="secNewsBlock">
+								<div class="indexTitle">
+									<strong>要闻</strong>
+								</div>
+								<div class="secNewsList">
+									<p>
+										<a href="#" target="_blank">确定了！日本海上自卫队将派这艘神盾舰参加中国海上阅兵</a>
+									</p>
+									<p>
+										<a href="#" se_prerender_url="complete" target="_blank">厄瓜多尔已撤销对阿桑奇的政治庇护
+											阿桑奇被英国逮捕</a>
+									</p>
+									<p>
+										<a href="#" target="_blank">塔利班放&ldquo;猛料&rdquo;：击落美军一架B-52战略轰炸机</a>
+									</p>
+									<p>
+										<a href="#" target="_blank">兵马俑在美被损案审判引争议 美国网友：要重审狠判！</a>
+									</p>
+									<p>
+										<a href="#" target="_blank">韩国宪法法院判定&quot;堕胎入刑&quot;违宪，过度侵害孕妇自行决定权</a>
+									</p>
+								</div>
+								<div class="secNewsList">
+									<p>
+										<a href="#" se_prerender_url="complete" target="_blank">美媒臆测中俄搜寻F35残骸
+											逆向复制将是美国噩梦</a>
+									</p>
+									<p>
+										<a href="#" target="_blank">【壮丽70年&middot;奋斗新时代】</a> <a
+											href="#" target="_blank">【科幻作家走进新国企】</a>
+									</p>
+									<p>
+										<a href="#" se_prerender_url="complete" target="_blank">中国限制“挖矿”震动比特币产业链</a>
+									</p>
+									<p>
+										<a href="#" target="_blank">AI研究，中美五点不同</a> <a href="#"
+											se_prerender_url="complete" target="_blank">苹果推迟5G，对手看到机会</a>
+									</p>
+									<p>
+										<a href="#">降准还是不降准？</a> <a href="#"
+											se_prerender_url="complete" target="_blank">黑洞&ldquo;首秀&rdquo;：像个甜甜圈？</a>
+									</p>
+								</div>
+								<div class="secNewsList">
+									<p>
+										<a href="#" target="_blank">原董事长涉杀人案 葵花药业称系个人行为</a>
+									</p>
+									<p>
+										<a href="#" target="_blank">&ldquo;陪伴式啃老&rdquo;
+											是尽孝还是&ldquo;啃老&rdquo;</a> <a href="#" target="_blank">当你老了如何养老？
+										</a>
+									</p>
+									<p>
+										<a href="#" target="_blank">这些少年少女美的炫目，神仙下凡就是这样吧！</a>
+									</p>
+									<p>
+										<a href="#" target="_blank">王俊凯作为未来之声青年大使出席APEC会议</a>
+									</p>
+									<p>
+										<a href="#" target="_blank">四月的故宫美成御花园！</a> <a href="#"
+											target="_blank">不用去洛阳，京城牡丹即将绽放</a>
+									</p>
+								</div>
+							</div>
+							<!-- 右侧-要闻 end-->
+						</div>
+						<!-- 右侧 end-->
+					</div>
+					<!-- 第二部分 end-->
+
+					<!-- 第三部分-新闻 begin-->
+					<div class="conThr clear">
+						<div class="indexBTitle">
+							<strong>新闻</strong> <a href="#" target="_blank">国际</a> <a
+								href="#" target="_blank">军事</a> <a href="#" target="_blank">国内</a>
+							<a href="#" target="_blank">台海</a> <a href="#" target="_blank">评论</a>
+							<a href="#" target="_blank">社会</a> <a href="#" target="_blank">博览</a>
+							<a href="#" target="_blank">海外看中国</a> <a href="#" target="_blank">无人机</a>
+							<span></span>
+						</div>
+						<!-- 左侧 begin-->
+						<div class="leftThr">
+							<div class="leftThrFocus">
+								<!-- 焦点图 begin -->
+								<div id="foucsBox11">
+									<ul class="imgCon" id="imgCon11">
+										<!--展示图片开始-->
+										<li><a href="#" title="日本破冰船完成第60次南极考察 返回东京港"
+											target="_blank"> <img src="./imgs/ql/news_lb1.jpg" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="日本破冰船完成第60次南极考察 返回东京港">日本破冰船完成第60次南极考察
+													返回东京港</a>
+											</div>
+											<div class="showPage"></div></li>
+										<li><a href="#" title="全国铁路调图 青岛进入北京3小时交通圈"
+											target="_blank"> <img src="./imgs/ql/news_lb2.jpg" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="全国铁路调图 青岛进入北京3小时交通圈">全国铁路调图
+													青岛进入北京3小时交通圈</a>
+											</div>
+											<div class="showPage"></div></li>
+										<li><a href="#" title="陈水扁上传复健照又突然删除美女合照？ "
+											target="_blank"> <img src="./imgs/ql/news_lb3.jpg" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="陈水扁上传复健照又突然删除美女合照？ ">陈水扁上传复健照又突然删除美女合照？
+												</a>
+											</div>
+											<div class="showPage"></div></li>
+										<li><a href="#" title="汶川地震“猪坚强”仍健在 相当人类80岁高龄"
+											target="_blank"> <img src="./imgs/ql/news_lb4.jpg" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="汶川地震“猪坚强”仍健在 相当人类80岁高龄">汶川地震“猪坚强”仍健在
+													相当人类80岁高龄</a>
+											</div>
+											<div class="showPage"></div></li>
+										<li><a href="#" title="水牛被狮群追入河又遇鳄鱼 最终被同伴救出"
+											target="_blank"> <img src="./imgs/ql/news_lb5.jpg" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="水牛被狮群追入河又遇鳄鱼 最终被同伴救出">水牛被狮群追入河又遇鳄鱼
+													最终被同伴救出</a>
+											</div>
+											<div class="showPage"></div></li>
+										<!--展示图片结束-->
+									</ul>
+									<div class="foucs"></div>
+									<div class="rBtn foucsButton">
+										<span></span> <img />
+									</div>
+									<div class="lBtn foucsButton">
+										<span></span> <img />
+									</div>
+								</div>
+								<!-- 焦点图 end -->
+							</div>
+
+							<div class="leftThrPic">
+								<ul class="ThrPic clear">
+									<li><a href="#" target="_blank"><img
+											src="./imgs/ql/news1.jpg" alt="跨界友谊！印度一狗狗叼来鲜草给饥饿水牛喂食" /></a>
+										<p>
+											<a href="#" target="_blank">跨界友谊！印度一狗狗叼来鲜草给饥饿水牛喂食</a>
+										</p></li>
+									<li><a href="#" target="_blank"><img
+											src="./imgs/ql/news2.gif" alt="飞行不规范 1万元无人机变残骸" /></a>
+										<p>
+											<a href="#" target="_blank">飞行不规范 1万元无人机变残骸</a>
+										</p></li>
+								</ul>
+							</div>
+						</div>
+						<!-- 左侧 end-->
+
+						<!-- 中间 begin-->
+						<div class="centerThr">
+							<dl class="thrNewsList">
+								<dt>
+									<a href="#" target="_blank">波罗申科消费普京？俄罗斯冷静回应</a>
+								</dt>
+								<dd>
+									<a href="#" target="_blank">日媒：失事F-35A战机飞行员或没时间跳伞逃难</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">92号汽油或重回“7元时代” 车主们请赶在周六前加油</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">高雄图书馆现“统战”杂志？绿媒被酸爆：实在无聊！</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">警车要为“统战活动”开道？绿营议员造谣被打脸</a>
+								</dd>
+							</dl>
+							<dl class="thrNewsList newsDis">
+								<dt>
+									<a href="#" target="_blank">美媒:中国阅舰或展示新潜艇 不参加是美方损失</a>
+								</dt>
+								<dd>
+									<a href="#" target="_blank">荒唐！乌克兰两男子为拍视频取乐推人入河致其溺亡(图)</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">秘鲁拘留所14岁少年企图赤脚翻墙“越狱”被抓回(视频)</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">转发这个黑洞，或许能吸走你全年的霉运…</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank"> 49岁叔叔和33岁侄子都找不到老婆 竟干下这种荒唐事</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">谷歌获准在澳大利亚用无人机送快递</a>
+								</dd>
+							</dl>
+
+						</div>
+						<!-- 中间 end-->
+
+						<!-- 右侧 begin-->
+						<div class="rightThr">
+							<div class="speColumn">
+								<div class="indexTitle">
+									<strong>环视频</strong> <a href="#" target="_blank">更多</a>
+								</div>
+								<div class="speColumnPic">
+									<ul class="clear">
+										<li><a href="#" class="spePic" target="_blank"> <img
+												src="./imgs/ql/news_video1.jpg" alt="英两男子包船旅行中捕获巨鲨 随后放归大海" />
+												<span></span>
+										</a>
+											<p>
+												<a href="#" target="_blank">英两男子包船旅行中捕获巨鲨 随后放归大海</a>
+											</p></li>
+										<li><a href="#" class="spePic" target="_blank"> <img
+												src="./imgs/ql/news_video2.jpg" alt="美国翼装飞行队高空与飞机比翼齐飞俯瞰美景" />
+												<span></span>
+										</a>
+											<p>
+												<a href="#" target="_blank">美国翼装飞行队高空与飞机比翼齐飞俯瞰美景</a>
+											</p></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="speColumnDis"></div>
+
+							<div class="speColumn">
+								<div class="indexTitle">
+									<strong>多语港</strong> <span class="udline1"></span>
+								</div>
+								<ul class="speColumnList">
+									<li><a href="#" target="_blank">World's 2nd largest
+											source of AI enterprises</a></li>
+									<li><a href="#" target="_blank">China the largest
+											chili producer</a></li>
+
+								</ul>
+							</div>
+							<div class="speColumn">
+								<div class="indexTitle">
+									<strong>欧洲版</strong> <a href="#" target="_blank">更多</a> <span
+										class="udline1"></span>
+								</div>
+								<ul class="speColumnList">
+									<li><a href="#" target="_blank">武磊终破门，追梦的人最可爱</a></li>
+									<li><a href="#" target="_blank">莎拉·翟在音乐院校举办两堂声乐大师课</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- 右侧 end-->
+					</div>
+					<!-- 第三部分-新闻 end-->
+
+					<!-- 第五部分-科技 begin-->
+					<div class="conThr clear">
+						<div class="indexBTitle">
+							<strong>科技</strong> <a href="#" target="_blank">科技</a> <a
+								href="#" target="_blank">智能</a> <a href="#" target="_blank">数码</a>
+							<a href="#" target="_blank">游戏</a> <span></span>
+						</div>
+						<!-- 左侧 begin-->
+						<div class="leftThr">
+							<div class="leftThrFocus">
+								<!-- 焦点图 begin -->
+								<div id="foucsBox33">
+									<ul class="imgCon" id="imgCon33">
+										<!--展示图片开始-->
+										<li><a href="#" title="人类首张黑洞照片面世 距地球5500万光年"
+											target="_blank"> <img src="./imgs/ql/tech_lb1.jpg" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="人类首张黑洞照片面世 距地球5500万光年">人类首张黑洞照片面世
+													距地球5500万光年</a>
+											</div>
+											<div class="showPage"></div></li>
+										<li><a href="#" title="探秘波兰最深泳池：往下跳是10层楼黑暗深渊"
+											target="_blank"> <img src="./imgs/ql/tech_lb2.jpg" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="探秘波兰最深泳池：往下跳是10层楼黑暗深渊">探秘波兰最深泳池：往下跳是10层楼黑暗深渊</a>
+											</div>
+											<div class="showPage"></div></li>
+										<li><a href="#" title="低成本家居机器人亮相：会叠衣服、会泡咖啡"
+											target="_blank"> <img src="./imgs/ql/tech_lb3.gif" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="低成本家居机器人亮相：会叠衣服、会泡咖啡">低成本家居机器人亮相：会叠衣服、会泡咖啡</a>
+											</div>
+											<div class="showPage"></div></li>
+										<li><a href="#" title="科学家计划克隆4.2万年前已灭绝小马"
+											target="_blank"> <img src="./imgs/ql/tech_lb4.jpg" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="科学家计划克隆4.2万年前已灭绝小马">科学家计划克隆4.2万年前已灭绝小马</a>
+											</div>
+											<div class="showPage"></div></li>
+										<li><a href="#" title="NASA盘点宇航员太空自拍照 景象引人注目"
+											target="_blank"> <img src="./imgs/ql/tech_lb5.jpg" />
+										</a>
+											<div class="imgTitle">
+												<a href="#" target="_blank" title="NASA盘点宇航员太空自拍照 景象引人注目">NASA盘点宇航员太空自拍照
+													景象引人注目</a>
+											</div>
+											<div class="showPage"></div></li>
+										<!--展示图片结束-->
+									</ul>
+									<div class="foucs"></div>
+									<div class="rBtn foucsButton">
+										<span></span> <img />
+									</div>
+									<div class="lBtn foucsButton">
+										<span></span> <img />
+									</div>
+								</div>
+								<!-- 焦点图 end -->
+							</div>
+
+							<div class="leftThrPic">
+								<ul class="ThrPic clear">
+									<li><a href="#" target="_blank"><img
+											src="./imgs/ql/tech1.jpg" alt="科学家展会现场“玩火”令人惊叹" /></a>
+										<p>
+											<a href="#" target="_blank">科学家展会现场“玩火”令人惊叹</a>
+										</p></li>
+									<li><a href="#" target="_blank"><img
+											src="./imgs/ql/tech2.gif" alt="神奇世界看看看第191季" /></a>
+										<p>
+											<a href="#" target="_blank">神奇世界看看看第191季</a>
+										</p></li>
+								</ul>
+							</div>
+						</div>
+						<!-- 左侧 end-->
+
+						<!-- 中间 begin-->
+						<div class="centerThr">
+							<dl class="thrNewsList">
+								<dt>
+									<a href="#" target="_blank">终于一睹黑洞“芳容”：首张照片面世</a>
+								</dt>
+								<dd>
+									<a href="#" target="_blank">群体：网约车司机月入近万元：生活比在外打工强多了</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">变动：中国电信掌门人落定 推动混改翼支付拟分拆上市</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">趋势：外国人游中国越来越爱用手机“私人定制”</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">生活：饿了么口碑首个社区型智慧餐厅落地 95.5秒出餐</a>
+								</dd>
+							</dl>
+							<dl class="thrNewsList newsDis">
+								<dt>
+									<a href="#" target="_blank">欧盟发布人工智能伦理准则</a>
+								</dt>
+								<dd>
+									<a href="#" target="_blank">关注：即将废弃纸制车票？英国开始推行智能电子火车票</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">热议：日本公开女性机器人 能提供有关女性的一切服务</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">热点：华为P30 Pro体验：暗光拍照惊人 生产力让人难忘</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">对比：8款饮用水大横评 那些年我们喝过的水是假的？</a>
+								</dd>
+								<dd>
+									<a href="#" target="_blank">评测：三星A80真机上手：非打孔刘海的全面屏新体验</a>
+								</dd>
+							</dl>
+						</div>
+						<!-- 中间 end-->
+
+						<!-- 右侧 begin-->
+						<div class="rightThr">
+							<div class="speColumn">
+								<div class="indexTitle">
+									<strong>探索世界</strong> <a href="#" target="_blank">更多</a> <span
+										class="udline2"></span>
+								</div>
+								<ul class="speColumnList">
+									<li><a href="#" target="_blank">韩国发现白垩纪恐龙足迹</a></li>
+									<li><a href="#" target="_blank">中国地表气温呈明显上升趋势</a></li>
+									<li><a href="#" target="_blank">什么“神器”能给黑洞拍照？</a></li>
+									<li><a href="#" target="_blank">揭秘超新星“前世” 蓝色伴星指出新方向</a></li>
+								</ul>
+							</div>
+
+							<div class="speColumnDis"></div>
+
+							<div class="speColumn">
+								<div class="indexTitle">
+									<strong>科技中国</strong> <a href="#" target="_blank">更多</a> <span
+										class="udline2"></span>
+								</div>
+								<ul class="speColumnList">
+									<li><a href="#" target="_blank">武汉启用首条5G智能制造生产线</a></li>
+									<li><a href="#" target="_blank">今天，全国铁路调图！这些线路变化不小</a></li>
+									<li><a href="#" target="_blank">中国地铁半世纪“蝶变”开创全新出行时代</a></li>
+									<li><a href="#" target="_blank">中国学者发现新型红外隐身材料</a></li>
+									<li><a href="#" target="_blank">中国科大团队发现来自约66亿光年外信号</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- 右侧 end-->
+					</div>
+					<!-- 第五部分-科技 end-->
+
+				</div>
+				<!-- 内容部分 end-->
+
+				<!-- 尾巴 begin -->
+				<div class="footNew">
+					<!-- 链接 begin -->
+					<div class="fLink">
+						<div class="flinkMain marWidMain">
+							<a href="#" target="_blank">环球网简介</a>| <a href="#"
+								target="_blank">About huanqiu.com</a>| <a href="#"
+								target="_blank">网站地图</a>| <a href="#" target="_blank">诚聘英才</a>|
+							<a href="#" target="_blank">广告服务</a>| <a href="#" target="_blank">联系方式</a>|
+							<a href="#" target="_blank">隐私政策</a>| <a href="#" target="_blank">服务条款</a>|
+							<a href="#" target="_blank">意见反馈</a>| <a href="#" target="_blank">公告</a>|
+							<a href="#" target="_blank">环球时报系产品</a>
+						</div>
+					</div>
+					<!-- 链接 end -->
+
+					<div class="copyMain">
+						<span><a href="#" target="_blank">不良内容举报</a> 邮箱：<a href="#">jubao@huanqiu.com</a></span><em>/</em><span>举报电话：010－65361101（内容投诉1601、广告投诉2404、技术投诉2804、其它1100）
+						</span><em style="color: #5e5e5e; margin-left: 22px; font-style: normal;">©
+							环球网</em><a href="#" style="color: #5e5e5e;">版权所有</a>
+					</div>
+
+					<!-- 版权区 begin -->
+					<div class="copyArea">
+						<div class="copyLink">
+							<ul>
+								<li>
+									<dl>
+										<dt>
+											<a href="#" target="_blank">互联网新闻信息服务许可证</a><br /> <a
+												href="#" target="_blank">电信与信息服务业务经营许可证号090455</a><br /> <a
+												href="#" target="_blank">网络文化经营许可证（京网文【2018】7000-558号）</a><br />
+											<a href="#" target="_blank">互联网出版许可证（新出网证（京）字085号）</a><br />
+										</dt>
+										<dd>
+											<a href="#" target="_blank">广播电视节目制作经营许可证((广媒)字第179号)</a><br />
+											<a href="#" target="_blank">互联网药品信息服务资格证书(京)-经营性-2009-0016</a><br />
+											<a href="#" target="_blank"><img
+												src="./imgs/ql/beian.png" style="float: left;" />京公网安备
+												11010502003203号</a><br /> <a href="#" rel="noreferrer"
+												target="_blank">京ICP备12013816号-10</a><br />
+										</dd>
+										<dt class="las">
+											<a href="#" target="_blank">网络传播视听节目许可证(0108322)</a><br /> <a
+												href="#" target="_blank">增值电信业务许可证 B2-20090462</a><br /> <a
+												href="#" target="_blank">暴恐有害信息举报入口</a>
+										</dt>
+									</dl>
+								</li>
+								<li class="copyLogo"><a rel="nofollow" class="logoCa"
+									title="经营性网站备案信息" target="_blank" href="#"></a> <a
+									rel="nofollow" class="logoCb" title="网上有害信息举报专区"
+									target="_blank" href="#"></a> <a rel="nofollow" class="logoCc"
+									title="中国文明网传播文明" target="_blank" href="#"></a> <a
+									rel="nofollow" class="logoCd" title="公安部网络违法犯罪举报网站"
+									target="_blank" href="#"></a> <a rel="nofollow" class="logoCe"
+									title="北京文化市场举报热线" target="_blank" href="#"></a></li>
+							</ul>
+						</div>
+
+					</div>
+					<!-- 版权区 end -->
+				</div>
+				<!-- 尾巴 end -->
+			</div>
+		</div>
+		<!-- 内容外侧 end-->
+	</div>
+
+	
+
+	<!-- 低版本浏览器升级-->
+	<!-- <script
+		src="./js/ql/browser_upgrade.js"
+		type="text/javascript"></script> -->
+
+
+
+	<!-- 统计文档各阶段加载时间 -->
+	<!-- <script type="text/javascript" src="http://toys.m.huanqiu.com/apps/lc/front/rs/js/performance.js"></script> -->
+	
+</body>
+</html>

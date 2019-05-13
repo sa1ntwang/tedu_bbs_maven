@@ -119,30 +119,26 @@
 
 						<table class="table table-striped">
 							<tr>
-								<td>昵称:</td>
-								<td>网友昵称</td>
-							</tr>
-							<tr>
-								<td>性别:</td>
-								<td>男</td>
-							</tr>
-							<tr>
 								<td>用户名:</td>
-								<td>18173111393</td>
+								<td id="username"></td>
 							</tr>
 							<tr>
-								<td>密码:</td>
-								<td>******</td>
+								<td>手机号码:</td>
+								<td id="phone"></td>
 							</tr>
 							<tr>
-								<td>达内校区:</td>
-								<td>长沙西中心校区</td>
+								<td >最近登录时间:</td>
+								<td id="lastLogin"></td>
 							</tr>
 							<tr>
-								<td>个性签名:</td>
-								<td>哈哈哈哈</td>
+								<td>锁定状态:</td>
+								<td id="userLock"></td>
 							</tr>
-
+							<tr>
+								<td>冻结状态:</td>
+								<td id="userFreeze"></td>
+							</tr>
+					
 						</table>
 					</div>
 					<div class="row div6">
@@ -185,5 +181,36 @@
 
 		</div>
 	</body>
+	<script type="text/javascript">
+	$(function(){
+		
+			var username="tw";
+			var password ="a11111";
+			 var url = "findByUserName";
+			var params = {
+					"username" : username,
+					"password" : password
+				};
+				
+				$.getJSON(url, params, function(result) { //响应结束运行此函数
+					console.log(result.state);
+					var time=new Date(result.data.lastLogin);
+					$("#username").html(result.data.username);
+					$("#phone").html(result.data.phone);
+					$("#lastLogin").html(time.getFullYear()+'-'+time.getMonth()+'-'+time.getDate());
+					if(result.data.userLock==0){
+						$("#userLock").html("未锁定");
+					}else{$("#userLock").html("已锁定");}
+					
+					if(result.data.userLock==0){
+						$("#userFreeze").html("未冻结");
+					}else{$("#userLock").html("已冻结");}
+
+					
+				}); 		
+		})
+	
+	
+	</script>
 
 </html>

@@ -1,355 +1,441 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>登陆-TEDU_BBS</title>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>登陆-TEDU_BBS</title>
 
-		<!-- Bootstrap -->
-		<link href="css/lys/bootstrap.min.css" rel="stylesheet">
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="css/lys/js/bootstrap.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="css/lys/js/bootstrap.min.js"></script>
-		<style>
-			.header {
-				border-bottom: solid #E6E6E6 2px;
-			}
-			
-			.logo {
-				height: 65px;
-				width: 151px;
-				float: right;
-			}
-			
-			.login {
-				margin-top: 20px;
-				font-size: 25px;
-				border-left: solid #dfdfdf 1px;
-				padding-left: 2px;
-			}
-			
-			.a1 {
-				color: #000000;
-				font-weight: 600;
-			}
-			
-			.zc {
-				margin-top: 20px;
-			}
-			
-			.hqsy {
-				margin-top: 20px;
-				border-left: solid #dfdfdf 1px;
-				padding-left: 2px;
-			}
-			
-			.b1 {
-				background-image: url(imgs/lys/timg.jpg);
-				background-size: 100% 100%;
-			}
-			
-			.b2 {
-				margin-top: 40px;
-				border: solid #000000 1px;
-				background: white;
-				border-radius: 10px;
-			}
-			
-			.yj {
-				width: 20px;
-				height: 15px;
-			}
-			
-			.loginheader {
-				height: 80px;
-			}
-			
-			#yhdl {
-				padding-top: 20px;
-				margin-left: 30px;
-			}
-			
-			#username {
-				width: 95%;
-				height: 35px;
-			}
-			
-			#password {
-				width: 95%;
-				height: 35px;
-			}
-			
-			.b2y {
-				height: 50px;
-				margin-top: 10px;
-			}
-			
-			#denglu {
-				background-color: #007ED7;
-				border-radius: 8px;
-				width: 250px;
-				height: 40px;
-			}
-			
-			.dengluk {
-				margin-left: 50px;
-			}
-			
-			#wenzi {
-				height: 40px;
-			}
-			
-			#weizibt {
-				margin-top: 20px;
-			}
-			
-			#kb {
-				height: 80px;
-			}
-			
-			#kb2 {
-				height: 120px;
-			}
-			
-			#weibu {
-				margin-top: 20px;
-				text-align: center;
-				color: #91AFD4;
-			}
-			
-			.w {
-				border-top: solid #E6E6E6 2px;
-			}
-			
-			.shuxin {
-				border-left: solid 1px #91AFD4;
-				padding-left: 15px;
-				color: #91AFD4;
-			}
-			
-			.yanse {
-				color: #91AFD4;
-			}
-			
-			.header {
-				border-bottom: solid #E6E6E6 2px;
-			}
-			
-			.logo {
-				height: 65px;
-				width: 151px;
-				float: right;
-			}
-			
-			.login {
-				margin-top: 20px;
-				font-size: 25px;
-				border-left: solid #dfdfdf 1px;
-				padding-left: 2px;
-			}
-			
-			.a1 {
-				color: #000000;
-				font-weight: 600;
-			}
-			
-			.zc {
-				margin-top: 20px;
-			}
-			
-			.hqsy {
-				margin-top: 20px;
-				border-left: solid #dfdfdf 1px;
-				padding-left: 2px;
-			}
-			
-			.b1 {
-				background-image: url(imgs/lys/timg.jpg);
-				background-size: 100% 100%;
-			}
-			
-			.b2 {
-				margin-top: 40px;
-				border: solid #000000 1px;
-				background: white;
-				border-radius: 10px;
-			}
-			
-			.yj {
-				width: 20px;
-				height: 15px;
-			}
-			
-			#yhdl {
-				padding-top: 20px;
-				margin-left: 30px;
-			}
-			
-			.loginuser {
-				height: 50px;
-			}
-			
-			.b2y {
-				height: 50px;
-				margin-top: 10px;
-			}
-			
-			#denglu {
-				background-color: #007ED7;
-				border-radius: 8px;
-				width: 75%;
-				height: 40px;
-				align-content: center;
-			}
-			
-			#wenzi {
-				height: 40px;
-			}
-			
-			#weizibt {
-				margin-top: 20px;
-			}
-			
-			#kb {
-				height: 80px;
-			}
-			
-			#kb2 {
-				height: 120px;
-			}
-			
-			#weibu {
-				margin-top: 20px;
-				text-align: center;
-				color: #91AFD4;
-			}
-			
-			.w {
-				border-top: solid #E6E6E6 2px;
-			}
-			
-			.shuxin {
-				border-left: solid 1px #91AFD4;
-				padding-left: 15px;
-				color: #91AFD4;
-			}
-			
-			.yanse {
-				color: #91AFD4;
-			}
-		</style>
-	</head>
+<!-- Bootstrap -->
+<link href="css/lys/bootstrap.min.css" rel="stylesheet">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.2.1.min.js"></script>
 
-	<body>
 
-		<div class="container-fluid header">
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<div class="col-sm-2">
-					<a href="#">
-						<img src="imgs/lys/tedu_logo.gif" class="logo" />
-					</a>
+<style>
+#ajax1 {
+	color: #f00;
+	text-align: center;
+	margin-bottom: 9px;
+	height: 20px;
+}
+
+.header {
+	border-bottom: solid #E6E6E6 2px;
+}
+
+.logo {
+	height: 65px;
+	width: 151px;
+	float: right;
+}
+
+.login {
+	margin-top: 20px;
+	font-size: 25px;
+	border-left: solid #dfdfdf 1px;
+	padding-left: 2px;
+}
+
+.a1 {
+	color: #000000;
+	font-weight: 600;
+}
+
+.zc {
+	margin-top: 20px;
+}
+
+.hqsy {
+	margin-top: 20px;
+	border-left: solid #dfdfdf 1px;
+	padding-left: 2px;
+}
+
+.b1 {
+	background-image: url(imgs/lys/timg.jpg);
+	background-size: 100% 100%;
+}
+
+.b2 {
+	margin-top: 40px;
+	border: solid #000000 1px;
+	background: white;
+	border-radius: 10px;
+}
+
+.yj {
+	width: 20px;
+	height: 15px;
+}
+
+.loginheader {
+	height: 80px;
+}
+
+#yhdl {
+	padding-top: 20px;
+	margin-left: 30px;
+}
+
+#username {
+	width: 95%;
+	height: 35px;
+}
+
+#password {
+	width: 95%;
+	height: 35px;
+}
+
+.b2y {
+	height: 50px;
+	margin-top: 10px;
+}
+
+#denglu {
+	background-color: #007ED7;
+	border-radius: 8px;
+	width: 250px;
+	height: 40px;
+}
+
+.dengluk {
+	margin-left: 50px;
+}
+
+#wenzi {
+	height: 40px;
+}
+
+#weizibt {
+	margin-top: 20px;
+}
+
+#kb {
+	height: 80px;
+}
+
+#kb2 {
+	height: 120px;
+}
+
+#weibu {
+	margin-top: 20px;
+	text-align: center;
+	color: #91AFD4;
+}
+
+.w {
+	border-top: solid #E6E6E6 2px;
+}
+
+.shuxin {
+	border-left: solid 1px #91AFD4;
+	padding-left: 15px;
+	color: #91AFD4;
+}
+
+.yanse {
+	color: #91AFD4;
+}
+
+.header {
+	border-bottom: solid #E6E6E6 2px;
+}
+
+.logo {
+	height: 65px;
+	width: 151px;
+	float: right;
+}
+
+.login {
+	margin-top: 20px;
+	font-size: 25px;
+	border-left: solid #dfdfdf 1px;
+	padding-left: 2px;
+}
+
+.a1 {
+	color: #000000;
+	font-weight: 600;
+}
+
+.zc {
+	margin-top: 20px;
+}
+
+.hqsy {
+	margin-top: 20px;
+	border-left: solid #dfdfdf 1px;
+	padding-left: 2px;
+}
+
+.b1 {
+	background-image: url(imgs/lys/timg.jpg);
+	background-size: 100% 100%;
+}
+
+.b2 {
+	margin-top: 40px;
+	border: solid #000000 1px;
+	background: white;
+	border-radius: 10px;
+}
+
+.yj {
+	width: 20px;
+	height: 15px;
+}
+
+#yhdl {
+	padding-top: 20px;
+	margin-left: 30px;
+}
+
+.loginuser {
+	height: 50px;
+}
+
+.b2y {
+	height: 50px;
+	margin-top: 10px;
+}
+
+#denglu {
+	background-color: #007ED7;
+	border-radius: 8px;
+	width: 75%;
+	height: 40px;
+	align-content: center;
+}
+
+#wenzi {
+	height: 40px;
+}
+
+#weizibt {
+	margin-top: 20px;
+}
+
+#kb {
+	height: 80px;
+}
+
+#kb2 {
+	height: 120px;
+}
+
+#weibu {
+	margin-top: 20px;
+	text-align: center;
+	color: #91AFD4;
+}
+
+.w {
+	border-top: solid #E6E6E6 2px;
+}
+
+.shuxin {
+	border-left: solid 1px #91AFD4;
+	padding-left: 15px;
+	color: #91AFD4;
+}
+
+.yanse {
+	color: #91AFD4;
+}
+
+#marginDiv {
+	height: 10px;
+}
+</style>
+</head>
+
+<body>
+
+	<div class="container-fluid header">
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<div class="col-sm-2">
+				<a href="#"> <img src="imgs/lys/tedu_logo.gif" class="logo" />
+				</a>
+			</div>
+			<div class="col-sm-2 login">
+				<div class="collapse navbar-collapse">
+					<b class="a1">登陆</b>
 				</div>
-				<div class="col-sm-2 login">
-					<div class="collapse navbar-collapse">
-						<b class="a1">登陆</b>
-					</div>
+			</div>
+			<div class="col-sm-5"></div>
+			<div class="col-sm-3">
+				<div class="zc">
+					<b>没有账号？立即</b> <a href="register2.html">注册</a> <a class="hqsy"
+						href="homepage">TeduBBS首页</a>
 				</div>
-				<div class="col-sm-5"> </div>
+			</div>
+		</div>
+	</div>
+	<div class="container  b1">
+		<div class="col-sm-7"></div>
+		<from class="col-sm-4 b2" method="POST" action="#">
+			<div class=" loginheader">
+				<h3 id="yhdl">用户登陆</h3>
+			</div>
+
+			<div class="loginuser">
+
+				<div class="input-group loginusername">
+					<span class="input-group-addon"><img src="imgs/lys/yj.jpg"
+						class="yj" /></span> <input type="text" name="username" id="username"
+						class="input-checkusername" placeholder="输入用户名" />
+				</div>
+				<div id="ajax1"></div>
+			</div>
+			<div id="marginDiv"></div>
+			<div class="input-group loginpass">
+				<span class="input-group-addon"><img src="imgs/lys/mima.jpg"
+					class="yj" /></span> <input type="password" name="password" id="password"
+					placeholder="密码" class="input-checkpassword" />
+			</div>
+			<div class="row b2y">
+				<div class="col-sm-5">
+					<input type="radio" name="gender" value="man" />下次自动登陆
+				</div>
+
+				<div class="col-sm-1"></div>
 				<div class="col-sm-3">
-					<div class="zc">
-						<b>没有账号？立即</b>
-						<a href="#">注册</a>
-						<a class="hqsy" href="#">环球网首页</a>
-					</div>
+					<a href="retrieve_password.html">忘记密码</a>
+				</div>
+				<div class="col-sm-3">
+					<a href="register2.html">立即注册</a>
 				</div>
 			</div>
-		</div>
-		<div class="container  b1">
-			<div class="col-sm-7">
+			<div class="dengluk">
+				<input type="button" id="denglu" value="登陆" />
 			</div>
-			<form class="col-sm-4 b2">
-				<div class=" loginheader">
-					<h3 id="yhdl">用户登陆</h3>
-				</div>
-
-				<div class="loginuser">
-
-					<div class="input-group loginusername">
-						<span class="input-group-addon"><img src="imgs/lys/yj.jpg" class="yj"/></span>
-						<input type="text" name="username" id="username" placeholder="输入用户名" />
-					</div>
-				</div>
-				<div class="input-group loginpass">
-					<span class="input-group-addon"><img src="imgs/lys/mima.jpg" class="yj" /></span>
-					<input type="password" name="password" id="password" placeholder="密码" />
-				</div>
-				<div class="row b2y">
-					<div class="col-sm-5">
-						<input type="radio" name="gender" value="man">下次自动登陆
-					</div>
-
-					<div class="col-sm-1"></div>
-					<div class="col-sm-3">
-						<a href="#">忘记密码</a>
-					</div>
-					<div class="col-sm-3">
-						<a href="#">立即注册</a>
-					</div>
-				</div>
-				<div class="dengluk">
-					<input type="submit" id="denglu" value="登陆" />
-				</div>
-				<div id="wenzi">
-					<h5 id="wenzibt">可以使用以下方式登陆:</h5>
-				</div>
-				<div>
-
-					<div class="col-sm-2">
-						<a href="#"><img src="imgs/lys/qq.jpg" height="32" width="32" /></a>
-					</div>
-					<div class="col-sm-2">
-						<a href="#"><img src="imgs/lys/wwibo.jpg" height="32" width="32" /></a>
-					</div>
-					<div class="col-sm-2">
-						<a href="#"><img src="imgs/lys/baidu.jpg" height="32" width="32" /></a>
-					</div>
-					<div class="col-sm-2">
-						<a href="#"><img src="imgs/lys/renrenw.jpg" height="32" width="32" /></a>
-					</div>
-					<div class="col-sm-2">
-						<a href="#"><img src="imgs/lys/weixin.jpg" height="32" width="32" /></a>
-					</div>
-					<div class="col-sm-2">
-						<a href="#"><img src="imgs/lys/yidong.jpg" height="32" width="32" /></a>
-					</div>
-
-				</div>
-				<div id="kb">
-				</div>
-			</form>
-
-			<div class="row"></div>
-			<div id="kb2" class="row"></div>
-		</div>
-		<div class="row w">
-			<div id="weibu">
-				<a class="yanse" href="#">环球简介</a>
-				<a class="shuxin" href="#">About huanqiu.com</a>
-				<a class="shuxin" href="#">网站地图</a>
-				<a class="shuxin" href="#">官方微博</a>
-				<a class="shuxin" href="#">诚聘精英</a>
-				<a class="shuxin" href="#"> 广告服务</a>
-				<a class="shuxin" href="#"> 联系方式</a>
-				<a class="shuxin" href="#"> 隐私政策</a>
-				<a class="shuxin" href="#"> 服务条款</a><br />
-				<h5 class="yanse">© 环球网 版权所有</h5>
+			<div id="wenzi">
+				<h5 id="wenzibt">可以使用以下方式登陆:</h5>
 			</div>
+			<div>
 
+				<div class="col-sm-2">
+					<a href="#"><img src="imgs/lys/qq.jpg" height="32" width="32" /></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="imgs/lys/wwibo.jpg" height="32"
+						width="32" /></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="imgs/lys/baidu.jpg" height="32"
+						width="32" /></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="imgs/lys/renrenw.jpg" height="32"
+						width="32" /></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="imgs/lys/weixin.jpg" height="32"
+						width="32" /></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="imgs/lys/yidong.jpg" height="32"
+						width="32" /></a>
+				</div>
+
+			</div>
+			<div id="kb"></div>
+		</from>
+
+		<div class="row"></div>
+		<div id="kb2" class="row"></div>
+	</div>
+	<div class="row w">
+		<div id="weibu">
+			<a class="yanse" href="#">TeduBBS简介</a> <a class="shuxin" href="#">About
+				TeduBBS.com</a> <a class="shuxin" href="#">网站地图</a> <a class="shuxin"
+				href="#">官方微博</a> <a class="shuxin" href="#">诚聘精英</a> <a
+				class="shuxin" href="#"> 广告服务</a> <a class="shuxin" href="#">
+				联系方式</a> <a class="shuxin" href="#"> 隐私政策</a> <a class="shuxin" href="#">
+				服务条款</a><br />
+			<h5 class="yanse">© TeduBBS 版权所有</h5>
 		</div>
 
-	</body>
+	</div>
 
+</body>
+<script type="text/javascript">
+	$(function() {
+		$(".dengluk").on("click", "#denglu", checkUsername)
+		$(".input-check").on("focus", clearLable);
+
+		$(".input-checkusername").on("blur", checkThisusername)
+
+		$(".input-checkpassword").on("blur", checkThispassword)
+	})
+	function clearLable() {
+		setMsg("");
+	}
+	function checkThisusername() {
+		var username = $("#username").val().trim();
+
+		//var currentTag = $(this).val();
+		//var zz=/^[A-Za-z0-9]{5,19}$/;
+		if (username == "" || username == null) {
+			setMsg("请输入用户名或手机号码");
+			return;
+		} else if (username.length<5||username.length>20) {
+			setMsg("请输入正确用户名或手机号码");
+			return;
+		} else {
+			setMsg("");
+			return;
+		}
+	}
+
+	function checkThispassword() {
+		var password = $("#password").val().trim();
+		if (password == null || password == "") {
+			setMsg("请输入密码");
+			return;
+		} else if (password.length<6||password.length>16) {
+			setMsg("请输入正确密码");
+			return;
+		} else {
+			setMsg("");
+			return;
+		}
+
+	}
+	/* 实现AJAX检查用户名是否存在 */
+	function checkUsername() {
+		var username = $("#username").val().trim();
+
+		var password = $("#password").val().trim();
+		$.ajax({
+			"url" : "/tedu_bbs/findByUserName",
+			"type" : "POST",
+			"data" : {
+				"username" : username,
+				"password" : password
+			},
+			"dataType" : "json",
+			"success" : function(result) {
+
+				if (result.state == 1) {
+					window.location.href = "homepage";
+				} else {
+					setMsg(result.message);
+				}
+			}
+		});
+
+	}
+	function setMsg(msg) {
+		$("#ajax1").html(msg);
+
+	}
+</script>
 </html>
