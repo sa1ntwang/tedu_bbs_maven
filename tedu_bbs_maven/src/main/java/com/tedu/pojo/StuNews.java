@@ -2,11 +2,11 @@ package com.tedu.pojo;
 
 public class StuNews {
 	Integer id;
-	Integer name;
+	String name;
 	String area;
 	String classname;//所在班级
-	Integer t_id;//职发
-	Integer m_id;//项目经理
+	Integer tId;//职发
+	Integer mId;//项目经理
 	String comName;
 	String job;
 	Double sal;
@@ -18,10 +18,10 @@ public class StuNews {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getName() {
+	public String getName() {
 		return name;
 	}
-	public void setName(Integer name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public String getArea() {
@@ -36,17 +36,17 @@ public class StuNews {
 	public void setClassname(String classname) {
 		this.classname = classname;
 	}
-	public Integer getT_id() {
-		return t_id;
+	public Integer getTId() {
+		return tId;
 	}
-	public void setT_id(Integer t_id) {
-		this.t_id = t_id;
+	public void setTId(Integer tId) {
+		this.tId = tId;
 	}
-	public Integer getM_id() {
-		return m_id;
+	public Integer getMId() {
+		return mId;
 	}
-	public void setM_id(Integer m_id) {
-		this.m_id = m_id;
+	public void setMId(Integer mId) {
+		this.mId = mId;
 	}
 	public String getComName() {
 		return comName;

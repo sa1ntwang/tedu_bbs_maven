@@ -6,6 +6,13 @@ public class Emp {
 	String area;
 	String job;
 	String tel;
+	Integer sugCount;
+	public Integer getSugCount() {
+		return sugCount;
+	}
+	public void setSugCount(Integer sugCount) {
+		this.sugCount = sugCount;
+	}
 	public Integer getId() {
 		return id;
 	}

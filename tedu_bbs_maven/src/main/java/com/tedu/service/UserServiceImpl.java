@@ -114,10 +114,10 @@ public class UserServiceImpl implements UserService{
 		
 		 User user= userMapper.findByUser(username);
 		 if(user==null){
-				throw new ServiceException("恭喜号码可以使用");
+				throw new ServiceException("恭喜用户名可以使用!");
 			}
 		if(!(user==null)){
-			throw new ServiceException("账号已存在");
+			throw new ServiceException("账号已存在!");
 		}
 		return user;
 	}
@@ -129,7 +129,6 @@ public class UserServiceImpl implements UserService{
 		public  User findByPhone(String phone) {
 			String ph="1(3|4|5|7|8)\\d{9}";
 			 if(!phone.matches(ph)){
-	/*			throw new IllegalArgumentException("请输入正确的手机号!");*/
 				throw new IllegalArgumentException("请输入正确的手机号!");
 			}
 			
@@ -138,7 +137,6 @@ public class UserServiceImpl implements UserService{
 				 throw new IllegalArgumentException("手机号不存在!");
 			 }
 			return user;
-			
 		}
 
 		@Override
@@ -150,9 +148,6 @@ public class UserServiceImpl implements UserService{
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
-			
-			
 		}
 
 		@Override

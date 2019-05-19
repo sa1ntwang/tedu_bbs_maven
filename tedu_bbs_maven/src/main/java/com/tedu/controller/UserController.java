@@ -17,11 +17,12 @@ import com.tedu.service.UserService;
  *
  */
 @Controller
+@RequestMapping("/")
 public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping("/findByUserName")
+	@RequestMapping("findByUserName")
 	@ResponseBody
 	public JsonResult findByUserName(String username,String password) throws Exception{
 		
@@ -44,7 +45,7 @@ public class UserController {
 		
 	}
 	
-	@RequestMapping("/addUser")
+	@RequestMapping("addUser")
 	@ResponseBody
 	public JsonResult addUser(String username,
 								String password,

@@ -2,6 +2,8 @@ package com.tedu.pojo;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Post {
 	private Integer postId;
 	private Integer writerId;
@@ -10,6 +12,7 @@ public class Post {
 	private String postBody;
 	private Integer viewCount;
 	private Integer writeBack;
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date lastUpdate;
 	private String writeBackList;
 	private Integer postStatus;

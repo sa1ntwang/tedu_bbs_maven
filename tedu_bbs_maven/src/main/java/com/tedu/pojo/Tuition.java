@@ -2,6 +2,8 @@ package com.tedu.pojo;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * 	对应达内新闻板块的学费优惠
  */
@@ -11,7 +13,9 @@ public class Tuition {
 	Double costs;
 	Integer discounting;
 	String content;
+	@JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
 	Date start;
+	@JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
 	Date end;
 	public Integer getId() {
 		return id;

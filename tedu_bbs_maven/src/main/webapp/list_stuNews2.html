@@ -1,0 +1,224 @@
+<div role="tabpanel" class="tab-pane active" id="tab2">
+	<div class="page-header">
+		<h1>
+			就业喜报<small>17:04</small>
+		</h1>
+	</div>
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>地区</th>
+				<th>所属班级</th>
+				<th>职业发展规划</th>
+				<th>项目经理</th>
+				<th>职位</th>
+				<th>薪资</th>
+				<th>学历</th>
+				<th>毕业院校</th>
+				<th style="width: 160px">操作</th>
+			</tr>
+		</thead>
+		<tbody id="StuNewsTab" startIndex="0" urlName="loadStuNewsTab">
+			<tr>
+				<th scope="row">0</th>
+				<td><input type="text" style="width: 100%" placeholder="姓名" id="name"></td>
+				<td><input type="text" style="width: 100%" placeholder="地区" id="area"></td>
+				<td><input type="text" style="width: 100%" placeholder="所属班级" id="classname"></td>
+				<td><input type="text" style="width: 100%" placeholder="职业发展规划" id="tId"></td>
+				<td><input type="text" style="width: 100%" placeholder="项目经理" id="mId"></td>
+				<td><input type="text" style="width: 100%" placeholder="职位" id="job"></td>
+				<td><input type="text" style="width: 100%" placeholder="薪资" id="sal"></td>
+				<td><input type="text" style="width: 100%" placeholder="学历" id="record"></td>
+				<td><input type="text" style="width: 100%" placeholder="毕业院校" id="school"></td>
+				<td>
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-primary active" id="createStuNews"> <input 
+							type="checkbox" autocomplete="off" checked>&nbsp;&nbsp;&nbsp;&nbsp;新&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增&nbsp;&nbsp;&nbsp;&nbsp;
+						</label>
+					</div>
+				</td>
+			</tr>
+			<tr rowid="1">
+				<th scope="row">1</th>
+				<td id="name">陶旺</td>
+				<td id="area">长沙河西cbd</td>
+				<td id="classname">CGB1902</td>
+				<td id="tid">李惠玲</td>
+				<td id="mid">佩奇</td>
+				<td id="job">java架构师</td>
+				<td id="sal">20000</td>
+				<td id="record">大学本科</td>
+				<td id="school">中南大学计算机科学与技术</td>
+				<td>
+					<div class="btn-group" data-toggle="buttons">
+						<div class="btn btn-primary active editStuNewsTab" rowid="1">修改</div>
+						<div class="btn btn-primary" id="deleteStuNewsTab"
+							rowid="1">删除</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- 提示窗口 -->
+<div class="alert" style="height:50px;line-height:50px;font-size:24px;width:65%;margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;"></div>
+<script type="text/javascript">
+$(function() {
+	loadStuNewsTab();
+	$("#StuNewsTab").on("click",".editStuNewsTab",editStuNewsFun);
+	$("#StuNewsTab").on("click","#deleteStuNewsTab",deleteStuNewsTabFun);
+	$("#createStuNews").on("click",createStuNews);
+});
+function loadStuNewsTab() {
+	var urlName = $("#StuNewsTab").attr("urlName");
+	var startIndex = $("#StuNewsTab").attr("startIndex");
+	$.ajax({
+		url : "loadStuNewsTab",
+		async : true,
+		data : {
+			"startIndex" : startIndex
+		},
+		dataType : "json",
+		success : function(result) {
+			var stuNewsTab = $("#StuNewsTab");
+			for (var i = 0; i < result.length; i++) {
+				var tr = $("<tr rowid='" + result[i].id + "'></tr>");
+				startIndex = startIndex - 0 + 1;
+				var tds = $("<th scope='row'>"+startIndex+"</th>"+
+						"<td id='name'>"+result[i].name+"</td>"+
+						"<td id='area'>"+result[i].area+"</td>"+
+						"<td id='classname'>"+result[i].classname+"</td>"+
+						"<td id='tid'>"+result[i].tid+"</td>"+
+						"<td id='mid'>"+result[i].mid+"</td>"+
+						"<td id='job'>"+result[i].job+"</td>"+
+						"<td id='sal'>"+result[i].sal+"</td>"+
+						"<td id='record'>"+result[i].record+"</td>"+
+						"<td id='school'>"+result[i].school+"</td>"+
+						"<td>"+
+							"<div class='btn-group' data-toggle='buttons'>"+
+								"<div class='btn btn-primary active editStuNewsTab' rowid='"+result[i].id+"'>修改</div>"+
+								"<div class='btn btn-primary' id='deleteStuNewsTab' rowid='"+result[i].id+"'>删除</div>"+
+							"</div>"+
+						"</td>");
+				tr.append(tds);
+				stuNewsTab.append(tr);
+				stuNewsTab.attr("startIndex",startIndex);
+			}
+		}
+	});
+}
+
+function editStuNewsFun(){
+	var rowid = $(this).attr("rowid");
+	var tds = $(this).parent().parent().siblings("td");
+	// var str = $(this).html()=="修改"?"确定":"修改";
+	var currentBtn = $(this).html();
+	if(currentBtn == "确定"){
+		var jsonStr = {};
+		//定义id值为rowid的json串,为修改准备					
+		jsonStr["id"]=rowid;
+		$(this).parent().parent().siblings("td").each(
+				function() { // 获取当前行的其他单元格
+					obj_text = $(this).find("input:text"); 
+					// 判断单元格下的文本框是否有内容
+					if (obj_text.val().trim().length){
+						//如果有内容,则添加到json串中
+						var currentId = obj_text.attr("id");
+						var currentVal = obj_text.val().trim();
+						jsonStr[currentId]=currentVal;
+					} else{
+						//如果没有内容,当前位置获取光标
+						obj_text.focus();
+						$(".alert").html("还有未填写的内容!").addClass("alert-success").show().delay(1500).fadeOut();
+						return false;
+					}
+				});
+		var jsonStrLength = 0;
+		for(var ever in jsonStr) {
+		    jsonStrLength++;
+		}
+		if(jsonStrLength<10){
+			return false;
+		}else{
+			$.ajax({
+                url : "updateStuNews",
+                type: 'POST',
+                data : jsonStr,
+                dataType : 'json',
+                success:function(result){
+                	if(result.status==000000)
+                	$(".alert").html(result.msg).addClass("alert-success").show().delay(1500).fadeOut();
+                	window.location.href = "#"
+                }
+            });				
+		}
+	}
+	var str = $(this).html() == "确定" ? "修改" : "确定";
+	$(this).html(str); // 按钮被点击后，在“编辑”和“确定”之间切换
+	$(this).parent().parent().siblings("td").each(
+			function() { // 获取当前行的其他单元格
+				obj_text = $(this).find("input:text"); // 判断单元格下是否有文本框
+				if (!obj_text.length) // 如果没有文本框，则添加文本框使之可以编辑
+					$(this).html(
+							"<input type='text' id="
+									+ $(this).attr("id")
+									+ " style='width:100%' value='"
+									+ $(this).text() + "'>");
+				else
+					// 如果已经存在文本框，则将其显示为文本框修改的值
+					$(this).html(obj_text.val());
+			});
+}
+function deleteStuNewsTabFun(){
+	$.ajax({
+        url : "deleteStuNews",
+        type: 'POST',
+        data : {"id":$(this).attr("rowid")},
+        dataType : 'json',
+        success:function(result){
+        	if(result.status==000000)
+        	$(".alert").html(result.msg).addClass("alert-success").show().delay(1500).fadeOut();
+        	window.location.href = "#"
+        }
+    });		
+}
+function createStuNews(){
+	var jsonString = {};
+	$(this).parent().parent().siblings("td").each(
+		function() { // 获取当前行的其他单元格
+			obj_text1 = $(this).find("input[type='text']"); 
+			// 判断单元格下的文本框是否有内容
+			if (obj_text1.val().trim().length){
+				jsonString[obj_text1.attr("id")]=obj_text1.val();
+			}else{
+				//如果没有内容,当前位置获取光标
+				obj_text1.focus();
+				$(".alert").html("还有未填写的内容!").addClass("alert-success").show().delay(1500).fadeOut();
+				return false;
+			}
+	});
+	var jsonStringLength = 0;
+	for(var ever in jsonString) {
+	    jsonStringLength++;
+	}
+	if(jsonStringLength<9){
+		return false;
+	}else{
+		$.ajax({
+	        url : "createStuNews",
+	        type: 'POST',
+	        data : jsonString,
+	        dataType : 'json',
+	        success:function(result){
+	        	if(result.status==000000)
+	        	$(".alert").html(result.msg).addClass("alert-success").show().delay(1500).fadeOut();
+	        	window.location.href = "#"
+	        }
+	    });
+	}
+}
+</script>

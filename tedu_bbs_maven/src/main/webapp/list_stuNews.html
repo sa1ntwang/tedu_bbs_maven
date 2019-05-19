@@ -1,0 +1,329 @@
+<div role="tabpanel" class="tab-pane active" id="tab2">
+	<div class="page-header">
+		<h1>
+			就业喜报<small>17:04</small>
+		</h1>
+	</div>
+	
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>地区</th>
+				<th>所属班级</th>
+				<th>职业发展规划</th>
+				<th>项目经理</th>
+				<th>职位</th>
+				<th>薪资</th>
+				<th>学历</th>
+				<th>毕业院校</th>
+				<th style="width: 160px">操作</th>
+			</tr>
+			<tr>
+				<th scope="row">0</th>
+				<td><input type="text" style="width: 100%" placeholder="姓名" id="name"></td>
+				<td><input type="text" style="width: 100%" placeholder="地区" id="area"></td>
+				<td><input type="text" style="width: 100%" placeholder="所属班级" id="classname"></td>
+				<td><input type="text" style="width: 100%" placeholder="职业发展规划" id="tId"></td>
+				<td><input type="text" style="width: 100%" placeholder="项目经理" id="mId"></td>
+				<td><input type="text" style="width: 100%" placeholder="职位" id="job"></td>
+				<td><input type="text" style="width: 100%" placeholder="薪资" id="sal"></td>
+				<td><input type="text" style="width: 100%" placeholder="学历" id="record"></td>
+				<td><input type="text" style="width: 100%" placeholder="毕业院校" id="school"></td>
+				<td>
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-primary active" id="createStuNews"> <input 
+							type="checkbox" autocomplete="off" checked>&nbsp;&nbsp;&nbsp;&nbsp;新&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增&nbsp;&nbsp;&nbsp;&nbsp;
+						</label>
+					</div>
+				</td>
+			</tr>
+		</thead>
+		<tbody id="StuNewsTab" urlName="loadStuNewsTab">
+			<tr><td colspan="8"><h2>数据正在加载!</h2></td></tr>
+			
+		</tbody>
+	</table>
+	<div class="row paginationBlock">
+		<div class="col-md-3"></div>
+		<ul class="pagination pagination-sm no-margin col-md-6"> 
+			<li><a class="first">首页</a></li>
+			<li><a class="pre">上一页</a></li>
+			<li><a class="next">下一页</a></li>
+			<li><a class="last">尾页</a></li>
+			<li><a class="rowCount">总记录数(0)</a></li>
+			<li><a class="pageCount">总页数(0)</a></li>
+			<li><a class="pageCurrent">当前页(1)</a></li>
+		</ul>
+		<div class="col-md-3"></div>
+	</div>
+</div>
+
+<!-- 提示窗口 -->
+<div class="alert" style="height:50px;line-height:50px;font-size:24px;width:65%;margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;"></div>
+<script type="text/javascript">
+$(function() {
+	doGetStuNewsObjects();
+	$("#StuNewsTab").on("click",".editStuNewsTab",editStuNewsFun);
+	$("#StuNewsTab").on("click","#deleteStuNewsTab",deleteStuNewsTabFun);
+	$("#createStuNews").on("click",createStuNews);
+	$(".paginationBlock").on("click",".first,.pre,.next,.last",doJumpToStuNewsPage);
+});
+
+/*========================================获取员工姓名===============================================*/
+function doGetEmpNameById(id){
+	
+}
+function doGetEmpNameListById(id){
+	
+}
+
+/*=======================================获取员工姓名结束==============================================*/
+/*========================================获取并设置表格===============================================*/
+function doGetStuNewsObjects(){
+	   //$("#checkAll").prop("checked",false);
+	   //1.url
+	   var url="findStuNewsObjects";
+	   //2.params
+	   var pageCurrent=$("#StuNewsTab").data("pageCurrent");
+	   if(!pageCurrent)pageCurrent=1;
+	   var params={"pageCurrent":pageCurrent};
+	   /* var username=$("#searchNameId").val();
+	   if(username){
+		   params.username=username;
+	   } */
+	   //3.send request 
+	   //getJSON底层会向服务端发送异步请求
+	   //服务端结果响应到客户端以后会调用function(result){}函数
+	   console.log("params",params);
+	   $.getJSON(url,params,function(result){//jsonResult
+		   doHandleStuNewsTabResponseResult(result,pageCurrent);
+	   });
+  }
+  //处理服务端返回的结果
+  function doHandleStuNewsTabResponseResult(result,pageCurrent){
+	   //console.log(result);
+	   if(result.state==1){//呈现数据(重点)
+		 //将日志记录呈现在本页面的tbody位置
+		 doSetStuNewsTabRows(result.data.records,pageCurrent);
+		 //将分页信息呈现在分页div中
+		 doSetStuNewsPagination(result.data);
+	   }else{
+			$(".alert").html(result.message).addClass("alert-success").show().delay(1500).fadeOut();
+	   }
+  }
+  //将日志记录呈现在tbody中
+  function doSetStuNewsTabRows(records,pageCurrent){
+	  var currentRows = (pageCurrent-1)*10+1;
+	   //1.获取tbody对象,并清空
+	   //var tBody=$("#StuNewsTab");
+		var stuNewsTab = $("#StuNewsTab");
+	   
+		stuNewsTab.empty();
+		//2.将记录records进行呈现
+		//2.1迭代记录集
+		for (var i = 0; i < records.length; i++) {
+			//2.2 创建tr对象
+			var tr = $("<tr rowid='" + records[i].id + "'></tr>");
+			//2.3 创建多个td对象
+			var tds=doCreateStuNewsTabTds(records[i],currentRows+i);
+			//2.4 将td对象追加到tr中
+			tr.append(tds);
+			//2.5 将tr追加到tbody中
+			stuNewsTab.append(tr);
+	   }
+  }
+  function doCreateStuNewsTabTds(data,startIndex){
+	  var tds = $("<th scope='row'>"+startIndex+"</th>"+
+				"<td id='name'>"+data.name+"</td>"+
+				"<td id='area'>"+data.area+"</td>"+
+				"<td id='classname'>"+data.classname+"</td>"+
+				"<td id='tid'>"+data.tid+"</td>"+
+				"<td id='mid'>"+data.mid+"</td>"+
+				"<td id='job'>"+data.job+"</td>"+
+				"<td id='sal'>"+data.sal+"</td>"+
+				"<td id='record'>"+data.record+"</td>"+
+				"<td id='school'>"+data.school+"</td>"+
+				"<td>"+
+					"<div class='btn-group' data-toggle='buttons'>"+
+						"<div class='btn btn-primary active editStuNewsTab' rowid='"+data.id+"'>修改</div>"+
+						"<div class='btn btn-primary' id='deleteStuNewsTab' rowid='"+data.id+"'>删除</div>"+
+					"</div>"+
+				"</td>");   
+           return tds;
+  }
+
+/*========================================获取并设置表格结束===============================================*/
+ 
+ 
+ 
+ 
+/*======================================分页相关==========================================*/
+  //初始化分页信息
+  function doSetStuNewsPagination(pageObject){
+	  //1.页面上呈现分页信息
+	  $(".rowCount").html("总记录数("+pageObject.rowCount+")");
+	  $(".pageCount").html("总页数("+pageObject.pageCount+")");
+	  $(".pageCurrent").html("当前页("+pageObject.pageCurrent+")");
+	  //2.存储当前页以及总页数信息(在某个dom元素上进行值绑定)
+	  $("#StuNewsTab").data("pageCurrent",pageObject.pageCurrent);
+	  $("#StuNewsTab").data("pageCount",pageObject.pageCount);
+      //说明:data函数为jquery中的一个数据绑定函数
+      //其语法:data(key,[value]);
+  }
+  function doJumpToStuNewsPage(){
+	  //1.修改当前页页码值
+	  //1.1获取当前的页码值以及总页数
+	  var pageCurrent=$("#StuNewsTab").data("pageCurrent");
+	  var pageCount=$("#StuNewsTab").data("pageCount");
+	  //1.2基于点击的元素修改页码值
+	  //1.2.1获取class属性的值,$(this)表示被点击的对象
+	  var cls=$(this).prop("class");
+	  //1.2.2基于cls判定点击的哪个对象
+	  if(cls=="first"){
+		  pageCurrent=1;
+	  }else if(cls=="next"&&pageCurrent<pageCount){
+		  pageCurrent++;
+	  }else if(cls=="pre"&&pageCurrent>1){
+		  pageCurrent--;
+	  }else if(cls=="last"){
+		  pageCurrent=pageCount;
+	  }else{
+		  return;
+	  }
+	  //2.基于新的页码,执行下次查询
+	  //2.1存储新的页码值
+	  $("#StuNewsTab").data("pageCurrent",pageCurrent);
+	  //2.2基于新页码值执行查询
+	  doGetStuNewsObjects();
+  }
+/*======================================分页相关结束==========================================*/
+function editStuNewsFun(){
+	var rowid = $(this).attr("rowid");
+	var tds = $(this).parent().parent().siblings("td");
+	// var str = $(this).html()=="修改"?"确定":"修改";
+	var currentBtn = $(this).html();
+	if(currentBtn == "确定"){
+		var jsonStr = {};
+		//定义id值为rowid的json串,为修改准备					
+		jsonStr["id"]=rowid;
+		$(this).parent().parent().siblings("td").each(
+				function() { // 获取当前行的其他单元格
+					obj_text = $(this).find("input:text"); 
+					// 判断单元格下的文本框是否有内容
+					if (obj_text.val().trim().length){
+						//如果有内容,则添加到json串中
+						var currentId = obj_text.attr("id");
+						var currentVal = obj_text.val().trim();
+						jsonStr[currentId]=currentVal;
+					} else{
+						//如果没有内容,当前位置获取光标
+						obj_text.focus();
+						$(".alert").html("还有未填写的内容!").addClass("alert-success").show().delay(1500).fadeOut();
+						return false;
+					}
+				});
+		var jsonStrLength = 0;
+		for(var ever in jsonStr) {
+		    jsonStrLength++;
+		}
+		if(jsonStrLength<10){
+			return false;
+		}else{
+			$.ajax({
+                url : "updateStuNews",
+                type: 'POST',
+                data : jsonStr,
+                dataType : 'json',
+                success:function(result){
+                	if(result.status==000000)
+                	$(".alert").html(result.msg).addClass("alert-success").show().delay(1500).fadeOut();
+                	window.location.href = "#"
+                }
+            });				
+		}
+	}
+	var str = $(this).html() == "确定" ? "修改" : "确定";
+	$(this).html(str); // 按钮被点击后，在“编辑”和“确定”之间切换
+	$(this).parent().parent().siblings("td").each(
+			function() { // 获取当前行的其他单元格
+				obj_text = $(this).find("input:text"); // 判断单元格下是否有文本框
+				if (!obj_text.length) // 如果没有文本框，则添加文本框使之可以编辑
+					$(this).html(
+							"<input type='text' id="
+									+ $(this).attr("id")
+									+ " style='width:100%' value='"
+									+ $(this).text() + "'>");
+				else
+					// 如果已经存在文本框，则将其显示为文本框修改的值
+					$(this).html(obj_text.val());
+			});
+}
+function deleteStuNewsTabFun(){
+	$.ajax({
+        url : "deleteStuNews",
+        type: 'POST',
+        data : {"id":$(this).attr("rowid")},
+        dataType : 'json',
+        success:function(result){
+        	if(result.status==000000)
+        	$(".alert").html(result.msg).addClass("alert-success").show().delay(1500).fadeOut();
+        	window.location.href = "#"
+        }
+    });		
+}
+function createStuNews(){
+	var jsonString = {};
+	$(this).parent().parent().siblings("td").each(
+		function() { // 获取当前行的其他单元格
+			obj_text1 = $(this).find("input[type='text']"); 
+			// 判断单元格下的文本框是否有内容
+			if (obj_text1.val().trim().length){
+				jsonString[obj_text1.attr("id")]=obj_text1.val();
+			}else{
+				//如果没有内容,当前位置获取光标
+				obj_text1.focus();
+				$(".alert").html("还有未填写的内容!").addClass("alert-success").show().delay(1500).fadeOut();
+				return false;
+			}
+	});
+	var jsonStringLength = 0;
+	for(var ever in jsonString) {
+	    jsonStringLength++;
+	}
+	if(jsonStringLength<9){
+		return false;
+	}else{
+		$.ajax({
+	        url : "createStuNews",
+	        type: 'POST',
+	        data : jsonString,
+	        dataType : 'json',
+	        success:function(result){
+	        	if(result.status==000000)
+	        	$(".alert").html(result.msg).addClass("alert-success").show().delay(1500).fadeOut();
+	        	window.location.href = "#"
+	        }
+	    });
+	}
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+</script>

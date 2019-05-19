@@ -2,31 +2,22 @@ package com.tedu.pojo;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Suggestion {
-	Integer id;
-	Integer uId;
-	Integer eId;
-	String topic;
-	String context;
-	Integer type;//0,投诉 1,建议
-	Date sTime;
+	private Integer id;
+	private Integer uId;
+	private Integer eId;
+	private String topic;
+	private String context;
+	private Integer type;//0,投诉 1,建议
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+	private Date sTime;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
-	}
-	public Integer getUId() {
-		return uId;
-	}
-	public void setUId(Integer uId) {
-		this.uId = uId;
-	}
-	public Integer getEId() {
-		return eId;
-	}
-	public void setEId(Integer eId) {
-		this.eId = eId;
 	}
 	public String getTopic() {
 		return topic;
@@ -46,10 +37,28 @@ public class Suggestion {
 	public void setType(Integer type) {
 		this.type = type;
 	}
+	public Integer getuId() {
+		return uId;
+	}
+	public void setuId(Integer uId) {
+		this.uId = uId;
+	}
+	public Integer geteId() {
+		return eId;
+	}
+	public void seteId(Integer eId) {
+		this.eId = eId;
+	}
 	public Date getsTime() {
-		return sTime;
+		return this.sTime;
 	}
 	public void setsTime(Date sTime) {
 		this.sTime = sTime;
 	}
+	@Override
+	public String toString() {
+		return "Suggestion [id=" + id + ", uId=" + uId + ", eId=" + eId + ", topic=" + topic + ", context=" + context
+				+ ", type=" + type + ", sTime=" + sTime + "]";
+	}
+	
 }

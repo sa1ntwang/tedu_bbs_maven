@@ -3,6 +3,8 @@ package com.tedu.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = -661436307833635308L;
@@ -12,6 +14,7 @@ public class User implements Serializable{
 	private String password;
 	private Integer userLock;
 	private Integer userFreeze;
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date lastLogin;
 	public User() {
 		super();

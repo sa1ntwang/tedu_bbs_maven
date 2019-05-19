@@ -4,7 +4,17 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.tedu.dao.TeduNewsMapper">
-
+	
+	<select id="getStuNewsRowCount" resultType="int">
+          select count(*) from stu_news
+    </select>
+    <select id="findStuNewsObjects" resultType="com.tedu.pojo.StuNews">
+        select
+			id,name,area,classname,t_id tId,m_id mId,com_name comName,job,sal,record,school
+			from stu_news
+           	order by id desc
+           	limit #{startIndex},#{pageSize}
+    </select>
 	<insert id="createStuNews">
 		insert into stu_news values(
 			#{id},#{name},#{area},#{classname},#{tId},#{mId},#{comName},#{job},#{sal},#{record},#{school}
@@ -20,16 +30,21 @@
 	</update>
 	<select id="findStuNewsById" resultType="com.tedu.pojo.StuNews">
 		select
-		id,name,area,classname,t_id tId,m_id mId,comName,job,sal,record,school
-		from stu_emp
+		id,name,area,classname,t_id tId,m_id mId,com_name comName,job,sal,record,school
+		from stu_news
 		where id=#{id}		
 	</select>	
 	<select id="findAllStuNews" resultType="com.tedu.pojo.StuNews">
 		select
-		id,name,area,classname,t_id tId,m_id mId,comName,job,sal,record,school
-		from stu_emp
+		id,name,area,classname,t_id tId,m_id mId,com_name comName,job,sal,record,school
+		from stu_news
 	</select>	
-
+	<select id="findAGroupOfStuNews" resultType="com.tedu.pojo.StuNews">
+		select
+		id,name,area,classname,t_id tId,m_id mId,com_name comName,job,sal,record,school
+		from stu_news
+		limit #{startIndex},10;
+	</select>
 
 	
 	<insert id="createSuggestion">
@@ -45,20 +60,44 @@
 		u_id=#{uId},e_id=#{eId},topic=#{topic},context=#{context},type=#{type},#s_time={sTime}
 	</update>
 	<select id="findSuggestionById" resultType="com.tedu.pojo.Suggestion">
-		select id,u_id uId,e_id eId,topic,context,type,s_time
+		select id,u_id uId,e_id eId,topic,context,type,s_time sTime
 		from suggestion
 		where id = #{id}
 	</select>	
 	<select id="findAllSuggestion" resultType="com.tedu.pojo.Suggestion">
-		select id,u_id uId,e_id eId,topic,context,type,s_time
+		select id,u_id uId,e_id eId,topic,context,type,s_time sTime
 		from suggestion
 	</select>	
+	<select id="findAGroupOfSuggestion" resultType="com.tedu.pojo.Suggestion">
+		select id,u_id uId,e_id eId,topic,context,type,s_time sTime
+		from suggestion
+		limit #{startIndex},10	
+	</select>
+	<select id="getSuggestionRowCount" resultType="int">
+          select count(*) from suggestion
+    </select>
+    <select id="findSuggestionObjects" resultType="com.tedu.pojo.Suggestion">
+        select id,u_id uId,e_id eId,topic,context,type,s_time sTime
+		from suggestion
+        order by id desc
+        limit #{startIndex},#{pageSize}
+    </select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 	
 	<insert id="createEmp">
 		insert into emp 
-		values(#{id},#{name},#{job},#{tel})
+		values(#{id},#{name},sug_count=#{sugCount},#{job},#{tel})
 	</insert>
 	<delete id="deleteEmpById">
 		delete from emp where id=#{id}
@@ -66,18 +105,38 @@
 	<update id="updateEmpById">
 		update emp 
 		set 
-		name=#{name},area=#{area},job=#{job},tel=#{tel}
+		name=#{name},area=#{area},sug_count=#{sugCount},job=#{job},tel=#{tel}
 	</update>
 	<select id="findEmpById" resultType="com.tedu.pojo.Emp">
-		select id,name,area,job,tel
+		select id,name,area,sug_count sugCount,job,tel
 		from emp where id=#{id}
 	</select>	
 	<select id="findAllEmp" resultType="com.tedu.pojo.Emp">
 		select id,name,area,job,tel
 		from emp
 	</select>	
+	<select id="findAGroupOfEmp" resultType="com.tedu.pojo.Emp">
+		select id,name,area,sug_count sugCount,job,tel
+		from emp
+		limit #{startIndex},10	
+	</select>
+	<select id="findEmpObjects" resultType="com.tedu.pojo.Emp">
+		select id,name,area,sug_count sugCount,job,tel
+		from emp
+		limit #{startIndex},#{pageSize}	
+	</select>
+	<select id="getEmpRowCount" resultType="int">
+          select count(*) from emp
+    </select>
 
-
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	<insert id="createTuition">
 		insert into tuition values(
@@ -101,4 +160,17 @@
 		select id,course,costs,discounting,content,start,end
 		from tuition
 	</select>	
+	<select id="findAGroupOfTuition" resultType="com.tedu.pojo.Tuition">
+		select id,course,costs,discounting,content,start,end
+		from tuition
+		limit #{startIndex},10	
+	</select>
+	<select id="findTuitionObjects" resultType="com.tedu.pojo.Tuition">
+		select id,course,costs,discounting,content,start,end
+		from tuition
+		limit #{startIndex},#{pageSize}	
+	</select>
+	<select id="getTuitionRowCount" resultType="int">
+          select count(*) from tuition
+    </select>
 </mapper>

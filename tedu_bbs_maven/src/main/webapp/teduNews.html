@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/select2.min.css"/>
 </head>
-<body>
-    <div id="header container">
+<body style="overflow-y: scroll; !important;">
+<!-- style="overflow-y: scroll; !important;" -->
+<!-- 解决切换页面时,页面长度超出屏幕的抖动问题 -->
+    <div id="header row">
         <nav class="navbar navbar-default">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -60,289 +63,62 @@
             </div><!-- /.container-fluid -->
         </nav>
     </div>
-    <div id="main" style="padding-top:30px " class="row">
+    <div id="main" style="padding-top:0px ">
    		<div class="container">
       		 <div class="col-md-2" role="navigation">
          		  <ul class="nav nav-pills nav-stacked vertical-tab" role="tablist">
            		  	 <li role="presentation" class="active">
-           		  	  	<a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">通知/规定</a>
+           		  	  	<a href="#tab1" id="loadNoticeTab" aria-controls="home" role="tab" data-toggle="tab">通知/规定</a>
            		  	 </li>
            		  	 
          		     <li role="presentation">
-         		     	<a href="#tab2" aria-controls="home" role="tab" data-toggle="tab">就业喜报</a>
+         		     	<a href="#tab2" id="loadStuNewsTab" aria-controls="home" role="tab" data-toggle="tab">就业喜报</a>
          		     </li>
          		     
           		     <li role="presentation">
-          		     	<a href="#tab3" aria-controls="home" role="tab" data-toggle="tab">学费优惠</a>
+          		     	<a href="#tab3" id="loadTuitionTab" aria-controls="home" role="tab" data-toggle="tab">学费优惠</a>
           		     </li>
           		     
           		     <li role="presentation">
-          		     	<a href="#tab4" aria-controls="home" role="tab" data-toggle="tab">工作人员</a>
+          		     	<a href="#tab4" id="loadEmpTab" aria-controls="home" role="tab" data-toggle="tab">工作人员</a>
           		     </li>
           		     
           		     <li role="presentation">
-          		     	<a href="#tab5" aria-controls="home" role="tab" data-toggle="tab">投诉建议</a>
+          		     	<a href="#tab5" id="loadSuggestionTab" aria-controls="home" role="tab" data-toggle="tab">投诉建议</a>
           		     </li>
           		 </ul>
        		</div>
-      		 <div class="tab-content vertical-tab-content col-md-10">
-				<div role="tabpanel" class="tab-pane active" id="tab1">
-					<div class="page-header">
-						<h1>
-							通知/规定<small>17:04</small>
-						</h1>
-					</div>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>序号</th>
-								<th>类别</th>
-								<th>主题</th>
-								<th>下达时间</th>
-								<th>简要内容</th>
-								<th>发送人</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>奖励</td>
-								<td>项目峰会</td>
-								<td>2019-5-10 17:11</td>
-								<td>CGB1902 Tedu_BBS项目在项目峰会中获得一等奖!</td>
-								<td>野猪佩奇</td>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>奖励</td>
-								<td>项目峰会</td>
-								<td>2019-5-10 17:11</td>
-								<td>CGB1902 Tedu_BBS项目在项目峰会中获得一等奖!</td>
-								<td>野猪佩奇</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>奖励</td>
-								<td>项目峰会</td>
-								<td>2019-5-10 17:11</td>
-								<td>CGB1902 Tedu_BBS项目在项目峰会中获得一等奖!</td>
-								<td>野猪佩奇</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div role="tabpanel" class="tab-pane" id="tab2">
-					<div class="page-header">
-						<h1>
-							就业喜报<small>17:04</small>
-						</h1>
-					</div>
-				
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>序号</th>
-								<th>姓名</th>
-								<th>地区</th>
-								<th>所属班级</th>
-								<th>职业发展规划</th>
-								<th>项目经理</th>
-								<th>职位</th>
-								<th>薪资</th>
-								<th>学历</th>
-								<th>毕业院校</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>陶旺</td>
-								<td>长沙河西cbd</td>
-								<td>CGB1902</td>
-								<td>李慧玲</td>
-								<td>野猪佩奇</td>
-								<td>Java后端开发</td>
-								<td>12k</td>
-								<td>大学本科</td>
-								<td>中南大学计算机科学与技术</td>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>陶旺</td>
-								<td>长沙河西cbd</td>
-								<td>CGB1902</td>
-								<td>李慧玲</td>
-								<td>野猪佩奇</td>
-								<td>Java后端开发</td>
-								<td>12k</td>
-								<td>大学本科</td>
-								<td>中南大学计算机科学与技术</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>陶旺</td>
-								<td>长沙河西cbd</td>
-								<td>CGB1902</td>
-								<td>李慧玲</td>
-								<td>野猪佩奇</td>
-								<td>Java后端开发</td>
-								<td>12k</td>
-								<td>大学本科</td>
-								<td>中南大学计算机科学与技术</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div role="tabpanel" class="tab-pane" id="tab3">
-					<div class="page-header">
-						<h1>
-							学费优惠<small>17:04</small>
-						</h1>
-					</div>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>序号</th>
-								<th>课程类型</th>
-								<th>费用</th>
-								<th>是否优惠</th>
-								<th>优惠条款</th>
-								<th>有效时间</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>童程童美</td>
-								<td>24000</td>
-								<td>是</td>
-								<td>儿童节期间报名,学费优惠1000元!</td>
-								<td>2019-6-1到2019-7-1</td>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>童程童美</td>
-								<td>24000</td>
-								<td>是</td>
-								<td>儿童节期间报名,学费优惠1000元!</td>
-								<td>2019-6-1到2019-7-1</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>童程童美</td>
-								<td>24000</td>
-								<td>是</td>
-								<td>儿童节期间报名,学费优惠1000元!</td>
-								<td>2019-6-1到2019-7-1</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div role="tabpanel" class="tab-pane" id="tab4">
-					<div class="page-header">
-						<h1>
-							工作人员<small>17:04</small>
-						</h1>
-					</div>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>序号</th>
-								<th>姓名</th>
-								<th>地区</th>
-								<th>工号</th>
-								<th>职位</th>
-								<th>投诉/建议数</th>
-								<th>电话</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>佩奇</td>
-								<td>长沙河西cbd</td>
-								<td>sb250</td>
-								<td>项目经理</td>
-								<td>11</td>
-								<td>***********</td>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>佩奇</td>
-								<td>长沙河西cbd</td>
-								<td>sb250</td>
-								<td>项目经理</td>
-								<td>11</td>
-								<td>***********</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>佩奇</td>
-								<td>长沙河西cbd</td>
-								<td>sb250</td>
-								<td>项目经理</td>
-								<td>11</td>
-								<td>***********</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div role="tabpanel" class="tab-pane" id="tab5">
-					<div class="page-header">
-						<h1>
-							投诉建议<small>17:04</small>
-						</h1>
-					</div>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>序号</th>
-								<th>投诉人</th>
-								<th>投诉目标</th>
-								<th>主题</th>
-								<th>内容</th>
-								<th>投诉时间</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>陶旺</td>
-								<td>佩奇</td>
-								<td>开车开的猛</td>
-								<td>老司机带带我,我要去美国!</td>
-								<td>5-10 16:56</td>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>陶旺</td>
-								<td>佩奇</td>
-								<td>开车开的猛</td>
-								<td>老司机带带我,我要去美国!</td>
-								<td>5-10 16:56</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>陶旺</td>
-								<td>佩奇</td>
-								<td>开车开的猛</td>
-								<td>老司机带带我,我要去美国!</td>
-								<td>5-10 16:56</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+      		 <div class="tab-content vertical-tab-content col-md-10" id="tabBodyDiv">
+      		 
+      		 	<h2>欢迎来到达内新闻板块!</h2>
+      		 
+      		 
 			</div>
-   		</div>
-    </div>
+   		 </div>
+     </div>
     <div id="footer">
 
 
     </div>
+    <div class="scriptFiles">
     	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <div>
-    
     </div>
+    <script type="text/javascript">
+    	$(function(){
+    		loadBody("loadNoticeTab","list_notice");
+    		loadBody("loadStuNewsTab","list_stuNews");
+    		loadBody("loadTuitionTab","list_tuition");
+    		loadBody("loadEmpTab","list_emp");
+    		loadBody("loadSuggestionTab","list_suggestion");
+    	});
+    	function loadBody(domId,url){
+    		$("#"+domId).click(function(){
+    			//console.log(domId);
+    			$("#tabBodyDiv").load(url);
+    		});
+    	}
+    </script>
+
 </body>
 </html>
